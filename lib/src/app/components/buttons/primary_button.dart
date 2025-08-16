@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hubx/src/shared/extensions/theme_extensions.dart';
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
@@ -7,12 +9,14 @@ class PrimaryButton extends StatelessWidget {
     super.key,
     this.isLoading = false,
     this.isEnabled = true,
+    this.textStyle,
   });
 
   final String text;
   final VoidCallback? onPressed;
   final bool isLoading;
   final bool isEnabled;
+  final TextStyle? textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +27,7 @@ class PrimaryButton extends StatelessWidget {
         onPressed: isEnabled && !isLoading ? onPressed : null,
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(12.r),
           ),
           elevation: 0,
         ),
@@ -37,10 +41,13 @@ class PrimaryButton extends StatelessWidget {
               )
             : Text(
                 text,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                ),
+                style:
+                    textStyle ??
+                    context.textTheme.bodySmall?.copyWith(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                      color: context.colorScheme.onPrimary,
+                    ),
               ),
       ),
     );

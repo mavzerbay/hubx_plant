@@ -648,7 +648,7 @@ return $default(_that.locale,_that.isLoggedIn,_that.isFirstLaunchApp,_that.isApp
 
 
 class _AppState extends AppState {
-  const _AppState({this.locale, this.isLoggedIn = false, this.isFirstLaunchApp = true, this.isAppInitiated = false, this.themeMode = ThemeMode.dark, this.loadingMessage, this.isLoadingVisible = false}): super._();
+  const _AppState({this.locale, this.isLoggedIn = false, this.isFirstLaunchApp = true, this.isAppInitiated = false, this.themeMode = ThemeMode.light, this.loadingMessage, this.isLoadingVisible = false}): super._();
   
 
 @override final  AppLocale? locale;

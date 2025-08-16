@@ -39,6 +39,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	Translations $copyWith({TranslationMetadata<AppLocale, Translations>? meta}) => Translations(meta: meta ?? this.$meta);
 
 	// Translations
+	late final TranslationsAppTr app = TranslationsAppTr.internal(_root);
 	late final TranslationsBottomNavigationTr bottomNavigation = TranslationsBottomNavigationTr.internal(_root);
 
 	/// Global buton ve kullanımlar için çeviriler
@@ -61,17 +62,18 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	/// Hata mesajları
 	late final TranslationsExceptionTr exception = TranslationsExceptionTr.internal(_root);
 
-	/// Kimlik doğrulama ile ilgili çeviriler
-	late final TranslationsAuthTr auth = TranslationsAuthTr.internal(_root);
+	/// Onboarding ekranı çevirileri
+	late final TranslationsOnboardingTr onboarding = TranslationsOnboardingTr.internal(_root);
+}
 
-	/// Kayıt ile ilgili çeviriler
-	late final TranslationsRegisterTr register = TranslationsRegisterTr.internal(_root);
+// Path: app
+class TranslationsAppTr {
+	TranslationsAppTr.internal(this._root);
 
-	/// Profil ile ilgili çeviriler
-	late final TranslationsProfileTr profile = TranslationsProfileTr.internal(_root);
+	final Translations _root; // ignore: unused_field
 
-	/// Sınırlı teklif modal'ı ile ilgili çeviriler
-	late final TranslationsLimitedOfferModalTr limitedOfferModal = TranslationsLimitedOfferModalTr.internal(_root);
+	// Translations
+	late final TranslationsAppThemeTr theme = TranslationsAppThemeTr.internal(_root);
 }
 
 // Path: bottomNavigation
@@ -192,6 +194,9 @@ class TranslationsGlobalTr {
 
 	/// tr: 'İleri'
 	String get next => 'İleri';
+
+	/// tr: 'Devam Et'
+	String get kContinue => 'Devam Et';
 
 	/// tr: 'Atla'
 	String get skip => 'Atla';
@@ -390,99 +395,53 @@ class TranslationsExceptionTr {
 	};
 }
 
-// Path: auth
-class TranslationsAuthTr {
-	TranslationsAuthTr.internal(this._root);
+// Path: onboarding
+class TranslationsOnboardingTr {
+	TranslationsOnboardingTr.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
 
-	/// tr: 'Çıkış yapmak istediğinize emin misiniz?'
-	String get logoutConfirmation => 'Çıkış yapmak istediğinize emin misiniz?';
+	/// tr: 'Başlayalım'
+	String get getStarted => 'Başlayalım';
 
-	/// tr: 'Emin misiniz?'
-	String get areYouSure => 'Emin misiniz?';
+	/// tr: 'Devam Et'
+	String get kContinue => 'Devam Et';
 
-	/// tr: 'Fotoğraf yüklemek istediğinize emin misiniz?'
-	String get areYouSureToUpload => 'Fotoğraf yüklemek istediğinize emin misiniz?';
+	late final TranslationsOnboardingPage1Tr page1 = TranslationsOnboardingPage1Tr.internal(_root);
+	late final TranslationsOnboardingPage2Tr page2 = TranslationsOnboardingPage2Tr.internal(_root);
+	late final TranslationsOnboardingPage3Tr page3 = TranslationsOnboardingPage3Tr.internal(_root);
 
-	/// tr: 'Fotoğraf başarıyla yüklendi!'
-	String get photoUploadSuccess => 'Fotoğraf başarıyla yüklendi!';
-}
-
-// Path: register
-class TranslationsRegisterTr {
-	TranslationsRegisterTr.internal(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-
-	/// tr: 'Hoşgeldiniz'
-	String get title => 'Hoşgeldiniz';
-
-	/// tr: 'Tempus varius a vitae interdum id tortor elementum tristique eleifend at.'
-	String get subtitle => 'Tempus varius a vitae interdum id\ntortor elementum tristique eleifend at.';
-
-	late final TranslationsRegisterButtonsTr buttons = TranslationsRegisterButtonsTr.internal(_root);
-	late final TranslationsRegisterGdprTr gdpr = TranslationsRegisterGdprTr.internal(_root);
-
-	/// tr: 'Zaten bir hesabın var mı? ${login(Giriş Yap)}!'
-	TextSpan doYouHaveAccount({required InlineSpanBuilder login}) => TextSpan(children: [
-		const TextSpan(text: 'Zaten bir hesabın var mı? '),
-		login('Giriş Yap'),
-		const TextSpan(text: '!'),
+	/// tr: 'İleri'ye dokunarak PlantID ${terms(Kullanım Şartları)} & ${privacy(Gizlilik Politikasını)} kabul etmiş olursunuz'
+	TextSpan termsText({required InlineSpanBuilder terms, required InlineSpanBuilder privacy}) => TextSpan(children: [
+		const TextSpan(text: 'İleri\'ye dokunarak PlantID\n'),
+		terms('Kullanım Şartları'),
+		const TextSpan(text: ' & '),
+		privacy('Gizlilik Politikasını'),
+		const TextSpan(text: ' kabul etmiş olursunuz'),
 	]);
 }
 
-// Path: profile
-class TranslationsProfileTr {
-	TranslationsProfileTr.internal(this._root);
+// Path: app.theme
+class TranslationsAppThemeTr {
+	TranslationsAppThemeTr.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
 
-	/// tr: 'Profil Detayı'
-	String get title => 'Profil Detayı';
+	/// tr: 'Uygulama Teması'
+	String get title => 'Uygulama Teması';
 
-	/// tr: 'Sınırlı Teklif'
-	String get limitedOffer => 'Sınırlı Teklif';
+	/// tr: 'Sistem'
+	String get system => 'Sistem';
 
-	/// tr: 'Fotoğraf Ekle'
-	String get addPhoto => 'Fotoğraf Ekle';
+	/// tr: 'Aydınlık'
+	String get light => 'Aydınlık';
 
-	/// tr: 'Beğendiğim Filmler'
-	String get favoriteMovies => 'Beğendiğim Filmler';
-
-	/// tr: 'Henüz beğenilen film yok'
-	String get noFavoriteMovies => 'Henüz beğenilen film yok';
-
-	/// tr: 'Beğendiğiniz filmleri buradan takip edin'
-	String get followFavoriteMovies => 'Beğendiğiniz filmleri buradan takip edin';
-
-	late final TranslationsProfileSettingsTr settings = TranslationsProfileSettingsTr.internal(_root);
-	late final TranslationsProfileAddPhotoPageTr addPhotoPage = TranslationsProfileAddPhotoPageTr.internal(_root);
-}
-
-// Path: limitedOfferModal
-class TranslationsLimitedOfferModalTr {
-	TranslationsLimitedOfferModalTr.internal(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-
-	/// tr: 'Sınırlı Teklif'
-	String get title => 'Sınırlı Teklif';
-
-	/// tr: 'Jeton paketi'ni seçerek bonus kazanın ve yeni bölümlerin kilidini açın!'
-	String get subtitle => 'Jeton paketi\'ni seçerek bonus kazanın ve yeni bölümlerin kilidini açın!';
-
-	late final TranslationsLimitedOfferModalBonusSectionTr bonusSection = TranslationsLimitedOfferModalBonusSectionTr.internal(_root);
-	late final TranslationsLimitedOfferModalPackageSectionTr packageSection = TranslationsLimitedOfferModalPackageSectionTr.internal(_root);
-	late final TranslationsLimitedOfferModalButtonTr button = TranslationsLimitedOfferModalButtonTr.internal(_root);
+	/// tr: 'Koyu'
+	String get dark => 'Koyu';
 }
 
 // Path: inputs.hints
@@ -506,145 +465,54 @@ class TranslationsInputsHintsTr {
 	String get name => 'Adınızı buraya yazabilirsiniz';
 }
 
-// Path: register.buttons
-class TranslationsRegisterButtonsTr {
-	TranslationsRegisterButtonsTr.internal(this._root);
+// Path: onboarding.page1
+class TranslationsOnboardingPage1Tr {
+	TranslationsOnboardingPage1Tr.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
 
-	/// tr: 'Şimdi Kaydol'
-	String get submit => 'Şimdi Kaydol';
+	/// tr: '${app(PlantApp'e)} Hoş Geldiniz'
+	TextSpan title({required InlineSpanBuilder app}) => TextSpan(children: [
+		app('PlantApp\'e'),
+		const TextSpan(text: ' Hoş Geldiniz'),
+	]);
 
-	/// tr: '${gdpr(Kullanıcı sözleşmesini)} okudum ve kabul ediyorum. Bu sözleşmeyi okuyarak devam ediniz lütfen'
-	TextSpan gdpr({required InlineSpanBuilder gdpr}) => TextSpan(children: [
-		gdpr('Kullanıcı sözleşmesini'),
-		const TextSpan(text: ' okudum ve kabul ediyorum. Bu sözleşmeyi okuyarak devam ediniz lütfen'),
+	/// tr: '3000'den fazla bitkiyi tanımlayın ve %88 doğruluk.'
+	String get subtitle => '3000\'den fazla bitkiyi tanımlayın ve %88 doğruluk.';
+}
+
+// Path: onboarding.page2
+class TranslationsOnboardingPage2Tr {
+	TranslationsOnboardingPage2Tr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// tr: 'Bitkiyi ${identify(tanımlamak)} için bir fotoğraf çekin!'
+	TextSpan title({required InlineSpanBuilder identify}) => TextSpan(children: [
+		const TextSpan(text: 'Bitkiyi '),
+		identify('tanımlamak'),
+		const TextSpan(text: ' için bir fotoğraf çekin!'),
 	]);
 }
 
-// Path: register.gdpr
-class TranslationsRegisterGdprTr {
-	TranslationsRegisterGdprTr.internal(this._root);
+// Path: onboarding.page3
+class TranslationsOnboardingPage3Tr {
+	TranslationsOnboardingPage3Tr.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
 
-	/// tr: 'Kullanıcı Sözleşmesi'
-	String get title => 'Kullanıcı Sözleşmesi';
-
-	/// tr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tincidunt vel quam non porta. Sed eget arcu pellentesque, euismod lacus vel, vehicula magna. Ut leo tortor, auctor nec odio nec, vehicula porta lectus. Mauris quis tristique tellus. Aliquam nisi mi, semper sit amet ex at, elementum ultricies enim. Maecenas eleifend risus sapien, in ultricies lorem aliquam sed. Suspendisse non porta mi, eget rhoncus tellus. Morbi a ligula a ligula viverra tempor a vel dolor. Nullam egestas ultricies pretium. Aliquam sagittis massa leo, in hendrerit tortor consectetur ut. Aliquam iaculis ligula sit amet enim bibendum, ut pharetra sapien rutrum. Fusce sit amet lorem id nunc volutpat interdum eu eu tellus. Cras id orci turpis. Sed posuere arcu nec vestibulum lobortis. Sed lacinia luctus venenatis. Donec bibendum congue condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sapien felis, fermentum sed tellus quis, tincidunt congue ipsum. Vestibulum nec purus non quam posuere varius vitae sed purus. Aenean et nulla nec sapien finibus imperdiet. Nam fermentum lobortis tellus. Etiam fermentum vulputate tellus eu sollicitudin.'
-	String get content => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tincidunt vel quam non porta. Sed eget arcu pellentesque, euismod lacus vel, vehicula magna. Ut leo tortor, auctor nec odio nec, vehicula porta lectus. Mauris quis tristique tellus. Aliquam nisi mi, semper sit amet ex at, elementum ultricies enim. Maecenas eleifend risus sapien, in ultricies lorem aliquam sed. Suspendisse non porta mi, eget rhoncus tellus. Morbi a ligula a ligula viverra tempor a vel dolor. Nullam egestas ultricies pretium. Aliquam sagittis massa leo, in hendrerit tortor consectetur ut. Aliquam iaculis ligula sit amet enim bibendum, ut pharetra sapien rutrum. Fusce sit amet lorem id nunc volutpat interdum eu eu tellus. Cras id orci turpis. Sed posuere arcu nec vestibulum lobortis.\n\nSed lacinia luctus venenatis. Donec bibendum congue condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sapien felis, fermentum sed tellus quis, tincidunt congue ipsum. Vestibulum nec purus non quam posuere varius vitae sed purus. Aenean et nulla nec sapien finibus imperdiet. Nam fermentum lobortis tellus. Etiam fermentum vulputate tellus eu sollicitudin.';
-}
-
-// Path: profile.settings
-class TranslationsProfileSettingsTr {
-	TranslationsProfileSettingsTr.internal(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-
-	/// tr: 'Ayarlar'
-	String get title => 'Ayarlar';
-
-	/// tr: 'Tema'
-	String get theme => 'Tema';
-
-	/// tr: 'Dil'
-	String get language => 'Dil';
-
-	/// tr: 'Çıkış Yap'
-	String get logout => 'Çıkış Yap';
-
-	/// tr: 'Karanlık'
-	String get dark => 'Karanlık';
-
-	/// tr: 'Aydınlık'
-	String get light => 'Aydınlık';
-
-	/// tr: 'Sistem'
-	String get system => 'Sistem';
-
-	/// tr: 'Türkçe'
-	String get turkish => 'Türkçe';
-
-	/// tr: 'English'
-	String get english => 'English';
-}
-
-// Path: profile.addPhotoPage
-class TranslationsProfileAddPhotoPageTr {
-	TranslationsProfileAddPhotoPageTr.internal(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-
-	/// tr: 'Fotoğraflarınızı Yükleyin'
-	String get title => 'Fotoğraflarınızı Yükleyin';
-
-	/// tr: 'Resources out incentivize relaxation floor loss cc.'
-	String get subtitle => 'Resources out incentivize\nrelaxation floor loss cc.';
-
-	/// tr: 'Devam Et'
-	String get continueButton => 'Devam Et';
-}
-
-// Path: limitedOfferModal.bonusSection
-class TranslationsLimitedOfferModalBonusSectionTr {
-	TranslationsLimitedOfferModalBonusSectionTr.internal(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-
-	/// tr: 'Alacağınız Bonuslar'
-	String get title => 'Alacağınız Bonuslar';
-
-	/// tr: 'Premium Hesap'
-	String get premiumAccount => 'Premium\nHesap';
-
-	/// tr: 'Daha Fazla Eşleşme'
-	String get moreMatches => 'Daha\nFazla Eşleşme';
-
-	/// tr: 'Öne Çıkarma'
-	String get featured => 'Öne\nÇıkarma';
-
-	/// tr: 'Daha Fazla Beğeni'
-	String get moreLikes => 'Daha\nFazla Beğeni';
-}
-
-// Path: limitedOfferModal.packageSection
-class TranslationsLimitedOfferModalPackageSectionTr {
-	TranslationsLimitedOfferModalPackageSectionTr.internal(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-
-	/// tr: 'Kilidi açmak için bir jeton paketi seçin'
-	String get title => 'Kilidi açmak için bir jeton paketi seçin';
-
-	/// tr: 'Jeton'
-	String get token => 'Jeton';
-
-	/// tr: 'Başına haftalık'
-	String get weeklyPrice => 'Başına haftalık';
-}
-
-// Path: limitedOfferModal.button
-class TranslationsLimitedOfferModalButtonTr {
-	TranslationsLimitedOfferModalButtonTr.internal(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-
-	/// tr: 'Tüm Jetonları Gör'
-	String get viewAllTokens => 'Tüm Jetonları Gör';
+	/// tr: 'Bitki ${careguides(bakım kılavuzları)} alın'
+	TextSpan title({required InlineSpanBuilder careguides}) => TextSpan(children: [
+		const TextSpan(text: 'Bitki '),
+		careguides('bakım kılavuzları'),
+		const TextSpan(text: ' alın'),
+	]);
 }
 
 /// Flat map(s) containing all translations.
@@ -652,6 +520,10 @@ class TranslationsLimitedOfferModalButtonTr {
 extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
+			case 'app.theme.title': return 'Uygulama Teması';
+			case 'app.theme.system': return 'Sistem';
+			case 'app.theme.light': return 'Aydınlık';
+			case 'app.theme.dark': return 'Koyu';
 			case 'bottomNavigation.home': return 'Ana Sayfa';
 			case 'bottomNavigation.profile': return 'Profil';
 			case 'global.ok': return 'Tamam';
@@ -688,6 +560,7 @@ extension on Translations {
 			case 'global.details': return 'Detaylar';
 			case 'global.directions': return 'Yol Tarifi';
 			case 'global.next': return 'İleri';
+			case 'global.kContinue': return 'Devam Et';
 			case 'global.skip': return 'Atla';
 			case 'login.title': return 'Merhabalar';
 			case 'login.subtitle': return 'Tempus varius a vitae interdum id\ntortor elementum tristique eleifend at.';
@@ -742,53 +615,30 @@ extension on Translations {
 			case 'exception.errorCodes.USER_EXISTS': return 'Kullanıcı zaten mevcut';
 			case 'exception.errorCodes.INVALID_CREDENTIALS': return 'Geçersiz e-posta veya şifre';
 			case 'exception.errorCodes.REQUEST_ENTITY_TOO_LARGE': return 'Gönderilen fotoğraf çok büyük, lütfen daha küçük bir fotoğraf yükleyin!';
-			case 'auth.logoutConfirmation': return 'Çıkış yapmak istediğinize emin misiniz?';
-			case 'auth.areYouSure': return 'Emin misiniz?';
-			case 'auth.areYouSureToUpload': return 'Fotoğraf yüklemek istediğinize emin misiniz?';
-			case 'auth.photoUploadSuccess': return 'Fotoğraf başarıyla yüklendi!';
-			case 'register.title': return 'Hoşgeldiniz';
-			case 'register.subtitle': return 'Tempus varius a vitae interdum id\ntortor elementum tristique eleifend at.';
-			case 'register.buttons.submit': return 'Şimdi Kaydol';
-			case 'register.buttons.gdpr': return ({required InlineSpanBuilder gdpr}) => TextSpan(children: [
-				gdpr('Kullanıcı sözleşmesini'),
-				const TextSpan(text: ' okudum ve kabul ediyorum. Bu sözleşmeyi okuyarak devam ediniz lütfen'),
+			case 'onboarding.getStarted': return 'Başlayalım';
+			case 'onboarding.kContinue': return 'Devam Et';
+			case 'onboarding.page1.title': return ({required InlineSpanBuilder app}) => TextSpan(children: [
+				app('PlantApp\'e'),
+				const TextSpan(text: ' Hoş Geldiniz'),
 			]);
-			case 'register.gdpr.title': return 'Kullanıcı Sözleşmesi';
-			case 'register.gdpr.content': return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tincidunt vel quam non porta. Sed eget arcu pellentesque, euismod lacus vel, vehicula magna. Ut leo tortor, auctor nec odio nec, vehicula porta lectus. Mauris quis tristique tellus. Aliquam nisi mi, semper sit amet ex at, elementum ultricies enim. Maecenas eleifend risus sapien, in ultricies lorem aliquam sed. Suspendisse non porta mi, eget rhoncus tellus. Morbi a ligula a ligula viverra tempor a vel dolor. Nullam egestas ultricies pretium. Aliquam sagittis massa leo, in hendrerit tortor consectetur ut. Aliquam iaculis ligula sit amet enim bibendum, ut pharetra sapien rutrum. Fusce sit amet lorem id nunc volutpat interdum eu eu tellus. Cras id orci turpis. Sed posuere arcu nec vestibulum lobortis.\n\nSed lacinia luctus venenatis. Donec bibendum congue condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sapien felis, fermentum sed tellus quis, tincidunt congue ipsum. Vestibulum nec purus non quam posuere varius vitae sed purus. Aenean et nulla nec sapien finibus imperdiet. Nam fermentum lobortis tellus. Etiam fermentum vulputate tellus eu sollicitudin.';
-			case 'register.doYouHaveAccount': return ({required InlineSpanBuilder login}) => TextSpan(children: [
-				const TextSpan(text: 'Zaten bir hesabın var mı? '),
-				login('Giriş Yap'),
-				const TextSpan(text: '!'),
+			case 'onboarding.page1.subtitle': return '3000\'den fazla bitkiyi tanımlayın ve %88 doğruluk.';
+			case 'onboarding.page2.title': return ({required InlineSpanBuilder identify}) => TextSpan(children: [
+				const TextSpan(text: 'Bitkiyi '),
+				identify('tanımlamak'),
+				const TextSpan(text: ' için bir fotoğraf çekin!'),
 			]);
-			case 'profile.title': return 'Profil Detayı';
-			case 'profile.limitedOffer': return 'Sınırlı Teklif';
-			case 'profile.addPhoto': return 'Fotoğraf Ekle';
-			case 'profile.favoriteMovies': return 'Beğendiğim Filmler';
-			case 'profile.noFavoriteMovies': return 'Henüz beğenilen film yok';
-			case 'profile.followFavoriteMovies': return 'Beğendiğiniz filmleri buradan takip edin';
-			case 'profile.settings.title': return 'Ayarlar';
-			case 'profile.settings.theme': return 'Tema';
-			case 'profile.settings.language': return 'Dil';
-			case 'profile.settings.logout': return 'Çıkış Yap';
-			case 'profile.settings.dark': return 'Karanlık';
-			case 'profile.settings.light': return 'Aydınlık';
-			case 'profile.settings.system': return 'Sistem';
-			case 'profile.settings.turkish': return 'Türkçe';
-			case 'profile.settings.english': return 'English';
-			case 'profile.addPhotoPage.title': return 'Fotoğraflarınızı Yükleyin';
-			case 'profile.addPhotoPage.subtitle': return 'Resources out incentivize\nrelaxation floor loss cc.';
-			case 'profile.addPhotoPage.continueButton': return 'Devam Et';
-			case 'limitedOfferModal.title': return 'Sınırlı Teklif';
-			case 'limitedOfferModal.subtitle': return 'Jeton paketi\'ni seçerek bonus kazanın ve yeni bölümlerin kilidini açın!';
-			case 'limitedOfferModal.bonusSection.title': return 'Alacağınız Bonuslar';
-			case 'limitedOfferModal.bonusSection.premiumAccount': return 'Premium\nHesap';
-			case 'limitedOfferModal.bonusSection.moreMatches': return 'Daha\nFazla Eşleşme';
-			case 'limitedOfferModal.bonusSection.featured': return 'Öne\nÇıkarma';
-			case 'limitedOfferModal.bonusSection.moreLikes': return 'Daha\nFazla Beğeni';
-			case 'limitedOfferModal.packageSection.title': return 'Kilidi açmak için bir jeton paketi seçin';
-			case 'limitedOfferModal.packageSection.token': return 'Jeton';
-			case 'limitedOfferModal.packageSection.weeklyPrice': return 'Başına haftalık';
-			case 'limitedOfferModal.button.viewAllTokens': return 'Tüm Jetonları Gör';
+			case 'onboarding.page3.title': return ({required InlineSpanBuilder careguides}) => TextSpan(children: [
+				const TextSpan(text: 'Bitki '),
+				careguides('bakım kılavuzları'),
+				const TextSpan(text: ' alın'),
+			]);
+			case 'onboarding.termsText': return ({required InlineSpanBuilder terms, required InlineSpanBuilder privacy}) => TextSpan(children: [
+				const TextSpan(text: 'İleri\'ye dokunarak PlantID\n'),
+				terms('Kullanım Şartları'),
+				const TextSpan(text: ' & '),
+				privacy('Gizlilik Politikasını'),
+				const TextSpan(text: ' kabul etmiş olursunuz'),
+			]);
 			default: return null;
 		}
 	}

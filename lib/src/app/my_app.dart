@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hubx/gen/translations.g.dart';
-import 'package:hubx/src/app/base/base_page.dart';
+import 'package:hubx/src/app/base/page_states/base_page.dart';
 import 'package:hubx/src/app/bloc/app_bloc.dart';
 import 'package:hubx/src/app/components/custom_circular_progress_fullscreen.dart';
 import 'package:hubx/src/app/di/locator.dart';
@@ -23,6 +23,9 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends BasePageState<MyApp, AppBloc> {
   @override
+  bool get isAppWidget => true;
+
+  @override
   Widget buildPage(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(360, 800),
@@ -37,13 +40,13 @@ class _MyAppState extends BasePageState<MyApp, AppBloc> {
         },
         child: BlocBuilder<AppBloc, AppState>(
           builder: (context, state) {
+            ScreenUtil.init(context, designSize: const Size(360, 800));
+            Translations.of(context);
             return MaterialApp.router(
               localizationsDelegates: GlobalMaterialLocalizations.delegates,
               supportedLocales: AppLocaleUtils.supportedLocales,
               locale: _getAppLocale(context, state),
               builder: (context, child) {
-                ScreenUtil.init(context, designSize: const Size(360, 800));
-                Translations.of(context);
                 final data = MediaQuery.of(context);
                 AppColors.of(context);
                 AppThemeSetting.currentAppThemeType =

@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hubx/gen/translations.g.dart';
-import 'package:hubx/src/app/base/base_page.dart';
+import 'package:hubx/src/app/base/page_states/base_page.dart';
 import 'package:hubx/src/app/bloc/app_bloc.dart';
 import 'package:hubx/src/app/navigation/app_navigator_impl.dart';
 import 'package:hubx/src/app/navigation/app_router.gr.dart';

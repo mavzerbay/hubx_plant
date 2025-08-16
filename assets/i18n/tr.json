@@ -1,4 +1,12 @@
 {
+  "app": {
+    "theme": {
+      "title": "Uygulama Teması",
+      "system": "Sistem",
+      "light": "Aydınlık",
+      "dark": "Koyu"
+    }
+  },
   "bottomNavigation": {
     "home": "Ana Sayfa",
     "profile": "Profil"
@@ -35,6 +43,7 @@
     "details": "Detaylar",
     "directions": "Yol Tarifi",
     "next": "İleri",
+    "continue": "Devam Et",
     "skip": "Atla"
   },
   "@global": {
@@ -123,78 +132,22 @@
   "@exception": {
     "description": "Hata mesajları"
   },
-  "auth": {
-    "logoutConfirmation": "Çıkış yapmak istediğinize emin misiniz?",
-    "areYouSure": "Emin misiniz?",
-    "areYouSureToUpload": "Fotoğraf yüklemek istediğinize emin misiniz?",
-    "photoUploadSuccess": "Fotoğraf başarıyla yüklendi!"
-  },
-  "@auth": {
-    "description": "Kimlik doğrulama ile ilgili çeviriler"
-  },
-  "register": {
-    "title": "Hoşgeldiniz",
-    "subtitle": "Tempus varius a vitae interdum id\ntortor elementum tristique eleifend at.",
-    "buttons": {
-      "submit": "Şimdi Kaydol",
-      "gdpr(rich)": "${gdpr(Kullanıcı sözleşmesini)} okudum ve kabul ediyorum. Bu sözleşmeyi okuyarak devam ediniz lütfen"
+  "onboarding": {
+    "getStarted": "Başlayalım",
+    "continue": "Devam Et",
+    "page1": {
+      "title(rich)": "${app(PlantApp'e)} Hoş Geldiniz",
+      "subtitle": "3000'den fazla bitkiyi tanımlayın ve %88 doğruluk."
     },
-    "gdpr": {
-      "title": "Kullanıcı Sözleşmesi",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tincidunt vel quam non porta. Sed eget arcu pellentesque, euismod lacus vel, vehicula magna. Ut leo tortor, auctor nec odio nec, vehicula porta lectus. Mauris quis tristique tellus. Aliquam nisi mi, semper sit amet ex at, elementum ultricies enim. Maecenas eleifend risus sapien, in ultricies lorem aliquam sed. Suspendisse non porta mi, eget rhoncus tellus. Morbi a ligula a ligula viverra tempor a vel dolor. Nullam egestas ultricies pretium. Aliquam sagittis massa leo, in hendrerit tortor consectetur ut. Aliquam iaculis ligula sit amet enim bibendum, ut pharetra sapien rutrum. Fusce sit amet lorem id nunc volutpat interdum eu eu tellus. Cras id orci turpis. Sed posuere arcu nec vestibulum lobortis.\n\nSed lacinia luctus venenatis. Donec bibendum congue condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sapien felis, fermentum sed tellus quis, tincidunt congue ipsum. Vestibulum nec purus non quam posuere varius vitae sed purus. Aenean et nulla nec sapien finibus imperdiet. Nam fermentum lobortis tellus. Etiam fermentum vulputate tellus eu sollicitudin."
+    "page2": {
+      "title(rich)": "Bitkiyi ${identify(tanımlamak)} için bir fotoğraf çekin!"
     },
-    "doYouHaveAccount(rich)": "Zaten bir hesabın var mı? ${login(Giriş Yap)}!"
-  },
-  "@register": {
-    "description": "Kayıt ile ilgili çeviriler"
-  },
-  "profile": {
-    "title": "Profil Detayı",
-    "limitedOffer": "Sınırlı Teklif",
-    "addPhoto": "Fotoğraf Ekle",
-    "favoriteMovies": "Beğendiğim Filmler",
-    "noFavoriteMovies": "Henüz beğenilen film yok",
-    "followFavoriteMovies": "Beğendiğiniz filmleri buradan takip edin",
-    "settings": {
-      "title": "Ayarlar",
-      "theme": "Tema",
-      "language": "Dil",
-      "logout": "Çıkış Yap",
-      "dark": "Karanlık",
-      "light": "Aydınlık",
-      "system": "Sistem",
-      "turkish": "Türkçe",
-      "english": "English"
+    "page3": {
+      "title(rich)": "Bitki ${careguides(bakım kılavuzları)} alın"
     },
-    "addPhotoPage": {
-      "title": "Fotoğraflarınızı Yükleyin",
-      "subtitle": "Resources out incentivize\nrelaxation floor loss cc.",
-      "continueButton": "Devam Et"
-    }
+    "termsText(rich)": "İleri'ye dokunarak PlantID\n${terms(Kullanım Şartları)} & ${privacy(Gizlilik Politikasını)} kabul etmiş olursunuz"
   },
-  "@profile": {
-    "description": "Profil ile ilgili çeviriler"
-  },
-  "limitedOfferModal": {
-    "title": "Sınırlı Teklif",
-    "subtitle": "Jeton paketi'ni seçerek bonus kazanın ve yeni bölümlerin kilidini açın!",
-    "bonusSection": {
-      "title": "Alacağınız Bonuslar",
-      "premiumAccount": "Premium\nHesap",
-      "moreMatches": "Daha\nFazla Eşleşme",
-      "featured": "Öne\nÇıkarma",
-      "moreLikes": "Daha\nFazla Beğeni"
-    },
-    "packageSection": {
-      "title": "Kilidi açmak için bir jeton paketi seçin",
-      "token": "Jeton",
-      "weeklyPrice": "Başına haftalık"
-    },
-    "button": {
-      "viewAllTokens": "Tüm Jetonları Gör"
-    }
-  },
-  "@limitedOfferModal": {
-    "description": "Sınırlı teklif modal'ı ile ilgili çeviriler"
+  "@onboarding": {
+    "description": "Onboarding ekranı çevirileri"
   }
 }

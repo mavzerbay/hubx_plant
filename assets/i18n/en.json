@@ -1,4 +1,12 @@
 {
+  "app": {
+    "theme": {
+      "title": "App Theme",
+      "system": "System",
+      "light": "Light",
+      "dark": "Dark"
+    }
+  },
   "bottomNavigation": {
     "home": "Home",
     "profile": "Profile"
@@ -35,6 +43,7 @@
     "details": "Details",
     "directions": "Directions",
     "next": "Next",
+    "continue": "Continue",
     "skip": "Skip"
   },
   "@global": {
@@ -123,78 +132,22 @@
   "@exception": {
     "description": "Error messages"
   },
-  "auth": {
-    "logoutConfirmation": "Are you sure you want to log out?",
-    "areYouSure": "Are you sure?",
-    "areYouSureToUpload": "Are you sure you want to upload the photo?",
-    "photoUploadSuccess": "Photo uploaded successfully!"
-  },
-  "@auth": {
-    "description": "Translations related to authentication"
-  },
-  "register": {
-    "title": "Welcome",
-    "subtitle": "Tempus varius a vitae interdum id\ntortor elementum tristique eleifend at.",
-    "buttons": {
-      "submit": "Register Now",
-      "gdpr(rich)": "I have read and agree to the ${gdpr(User Agreement)}. Please read this agreement before proceeding."
+  "onboarding": {
+    "getStarted": "Get Started",
+    "continue": "Continue",
+    "page1": {
+      "title(rich)": "Welcome to ${app(PlantApp)}",
+      "subtitle": "Identify more than 3000+ plants and 88% accuracy."
     },
-    "gdpr": {
-      "title": "User Agreement",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tincidunt vel quam non porta. Sed eget arcu pellentesque, euismod lacus vel, vehicula magna. Ut leo tortor, auctor nec odio nec, vehicula porta lectus. Mauris quis tristique tellus. Aliquam nisi mi, semper sit amet ex at, elementum ultricies enim. Maecenas eleifend risus sapien, in ultricies lorem aliquam sed. Suspendisse non porta mi, eget rhoncus tellus. Morbi a ligula a ligula viverra tempor a vel dolor. Nullam egestas ultricies pretium. Aliquam sagittis massa leo, in hendrerit tortor consectetur ut. Aliquam iaculis ligula sit amet enim bibendum, ut pharetra sapien rutrum. Fusce sit amet lorem id nunc volutpat interdum eu eu tellus. Cras id orci turpis. Sed posuere arcu nec vestibulum lobortis.\n\nSed lacinia luctus venenatis. Donec bibendum congue condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sapien felis, fermentum sed tellus quis, tincidunt congue ipsum. Vestibulum nec purus non quam posuere varius vitae sed purus. Aenean et nulla nec sapien finibus imperdiet. Nam fermentum lobortis tellus. Etiam fermentum vulputate tellus eu sollicitudin."
+    "page2": {
+      "title(rich)": "Take a photo to ${identify(identify)}\nthe plant!"
     },
-    "doYouHaveAccount(rich)": "Do you already have an account? ${login(Login)}!"
-  },
-  "@register": {
-    "description": "Translations related to registration"
-  },
-  "profile": {
-    "title": "Profile Details",
-    "limitedOffer": "Limited Offer",
-    "addPhoto": "Add Photo",
-    "favoriteMovies": "Favorite Movies",
-    "noFavoriteMovies": "No favorite movies yet",
-    "followFavoriteMovies": "Follow your favorite movies from here",
-    "settings": {
-      "title": "Settings",
-      "theme": "Theme",
-      "language": "Language",
-      "logout": "Logout",
-      "dark": "Dark",
-      "light": "Light",
-      "system": "System",
-      "turkish": "Türkçe",
-      "english": "English"
+    "page3": {
+      "title(rich)": "Get plant ${careguides(care guides)}"
     },
-    "addPhotoPage": {
-      "title": "Upload Your Photos",
-      "subtitle": "Resources out incentivize\nrelaxation floor loss cc.",
-      "continueButton": "Continue"
-    }
+    "termsText(rich)": "By tapping next, you are agreeing to PlantID\n${terms(Terms of Use)} & ${privacy(Privacy Policy)}"
   },
-  "@profile": {
-    "description": "Translations related to profile"
-  },
-  "limitedOfferModal": {
-    "title": "Limited Offer",
-    "subtitle": "Choose a token package to earn bonuses and unlock new episodes!",
-    "bonusSection": {
-      "title": "Bonuses You'll Get",
-      "premiumAccount": "Premium\nAccount",
-      "moreMatches": "More\nMatches",
-      "featured": "Featured\nProfile",
-      "moreLikes": "More\nLikes"
-    },
-    "packageSection": {
-      "title": "Choose a token package to unlock",
-      "token": "Token",
-      "weeklyPrice": "Per week"
-    },
-    "button": {
-      "viewAllTokens": "View All Tokens"
-    }
-  },
-  "@limitedOfferModal": {
-    "description": "Translations related to limited offer modal"
+  "@onboarding": {
+    "description": "Onboarding screen translations"
   }
 }

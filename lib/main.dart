@@ -6,7 +6,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hubx/application_config.dart';
 import 'package:hubx/gen/translations.g.dart';
-import 'package:hubx/src/app/base/bloc/auth/auth_bloc.dart';
 import 'package:hubx/src/app/bloc/app_bloc.dart';
 import 'package:hubx/src/app/di/locator.dart';
 import 'package:hubx/src/app/my_app.dart';
@@ -26,10 +25,6 @@ Future<void> _runMyApp() async {
         providers: [
           BlocProvider<AppBloc>(
             create: (context) => locator<AppBloc>(),
-          ),
-          BlocProvider<AuthBloc>(
-            create: (context) =>
-                locator<AuthBloc>()..add(const AuthEvent.initial()),
           ),
         ],
         child: const MyApp(),
