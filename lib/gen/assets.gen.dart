@@ -30,15 +30,22 @@ class $AssetsImagesGen {
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
+  /// File path: assets/images/mail.png
+  AssetGenImage get mail => const AssetGenImage('assets/images/mail.png');
+
   /// Directory path: assets/images/onboarding
   $AssetsImagesOnboardingGen get onboarding =>
       const $AssetsImagesOnboardingGen();
+
+  /// File path: assets/images/search_background.png
+  AssetGenImage get searchBackground =>
+      const AssetGenImage('assets/images/search_background.png');
 
   /// File path: assets/images/splash.jpg
   AssetGenImage get splash => const AssetGenImage('assets/images/splash.jpg');
 
   /// List of all assets
-  List<AssetGenImage> get values => [logo, splash];
+  List<AssetGenImage> get values => [logo, mail, searchBackground, splash];
 }
 
 class $AssetsImagesOnboardingGen {

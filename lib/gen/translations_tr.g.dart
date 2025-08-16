@@ -64,6 +64,9 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 
 	/// Onboarding ekranı çevirileri
 	late final TranslationsOnboardingTr onboarding = TranslationsOnboardingTr.internal(_root);
+
+	/// Ana sayfa çevirileri
+	late final TranslationsHomeTr home = TranslationsHomeTr.internal(_root);
 }
 
 // Path: app
@@ -423,6 +426,30 @@ class TranslationsOnboardingTr {
 	]);
 }
 
+// Path: home
+class TranslationsHomeTr {
+	TranslationsHomeTr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final TranslationsHomeGreetingTr greeting = TranslationsHomeGreetingTr.internal(_root);
+
+	/// tr: 'Bitkileri arayın'
+	String get searchPlaceholder => 'Bitkileri arayın';
+
+	late final TranslationsHomePremiumTr premium = TranslationsHomePremiumTr.internal(_root);
+
+	/// tr: 'Bitki Tarayın'
+	String get scanPlant => 'Bitki Tarayın';
+
+	/// tr: 'Öne Çıkanlar'
+	String get featured => 'Öne Çıkanlar';
+
+	late final TranslationsHomeCategoriesTr categories = TranslationsHomeCategoriesTr.internal(_root);
+	late final TranslationsHomeFeaturesTr features = TranslationsHomeFeaturesTr.internal(_root);
+}
+
 // Path: app.theme
 class TranslationsAppThemeTr {
 	TranslationsAppThemeTr.internal(this._root);
@@ -513,6 +540,78 @@ class TranslationsOnboardingPage3Tr {
 		careguides('bakım kılavuzları'),
 		const TextSpan(text: ' alın'),
 	]);
+}
+
+// Path: home.greeting
+class TranslationsHomeGreetingTr {
+	TranslationsHomeGreetingTr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// tr: 'Merhaba bitki aşığı!'
+	String get hiPlantLover => 'Merhaba bitki aşığı!';
+
+	/// tr: 'Günaydın! ⛅'
+	String get goodMorning => 'Günaydın! ⛅';
+
+	/// tr: 'İyi Günler! ⛅'
+	String get goodAfternoon => 'İyi Günler! ⛅';
+
+	/// tr: 'İyi Akşamlar! 🌙'
+	String get goodEvening => 'İyi Akşamlar! 🌙';
+}
+
+// Path: home.premium
+class TranslationsHomePremiumTr {
+	TranslationsHomePremiumTr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// tr: 'ÜCRETSİZ Premium Mevcut'
+	String get title => 'ÜCRETSİZ Premium Mevcut';
+
+	/// tr: 'Hesabınızı yükseltmek için dokunun!'
+	String get subtitle => 'Hesabınızı yükseltmek için dokunun!';
+}
+
+// Path: home.categories
+class TranslationsHomeCategoriesTr {
+	TranslationsHomeCategoriesTr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// tr: 'Yenilebilir Bitkiler'
+	String get ediblePlants => 'Yenilebilir Bitkiler';
+
+	/// tr: 'Eğreltiotları'
+	String get ferns => 'Eğreltiotları';
+
+	/// tr: 'Kaktüs ve Sukulentler'
+	String get cactiAndSucculents => 'Kaktüs ve Sukulentler';
+
+	/// tr: 'Palmiyeler'
+	String get palms => 'Palmiyeler';
+}
+
+// Path: home.features
+class TranslationsHomeFeaturesTr {
+	TranslationsHomeFeaturesTr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// tr: 'PlantApp ile bitkileri kolayca nasıl tanımlarsınız?'
+	String get identifyPlants => 'PlantApp ile bitkileri kolayca\nnasıl tanımlarsınız?';
+
+	/// tr: 'Tür ve alt türler: fark nedir?'
+	String get speciesDifference => 'Tür ve alt türler:\nfark nedir?';
 }
 
 /// Flat map(s) containing all translations.
@@ -639,6 +738,21 @@ extension on Translations {
 				privacy('Gizlilik Politikasını'),
 				const TextSpan(text: ' kabul etmiş olursunuz'),
 			]);
+			case 'home.greeting.hiPlantLover': return 'Merhaba bitki aşığı!';
+			case 'home.greeting.goodMorning': return 'Günaydın! ⛅';
+			case 'home.greeting.goodAfternoon': return 'İyi Günler! ⛅';
+			case 'home.greeting.goodEvening': return 'İyi Akşamlar! 🌙';
+			case 'home.searchPlaceholder': return 'Bitkileri arayın';
+			case 'home.premium.title': return 'ÜCRETSİZ Premium Mevcut';
+			case 'home.premium.subtitle': return 'Hesabınızı yükseltmek için dokunun!';
+			case 'home.scanPlant': return 'Bitki Tarayın';
+			case 'home.featured': return 'Öne Çıkanlar';
+			case 'home.categories.ediblePlants': return 'Yenilebilir Bitkiler';
+			case 'home.categories.ferns': return 'Eğreltiotları';
+			case 'home.categories.cactiAndSucculents': return 'Kaktüs ve Sukulentler';
+			case 'home.categories.palms': return 'Palmiyeler';
+			case 'home.features.identifyPlants': return 'PlantApp ile bitkileri kolayca\nnasıl tanımlarsınız?';
+			case 'home.features.speciesDifference': return 'Tür ve alt türler:\nfark nedir?';
 			default: return null;
 		}
 	}

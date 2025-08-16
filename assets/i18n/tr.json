@@ -149,5 +149,33 @@
   },
   "@onboarding": {
     "description": "Onboarding ekranı çevirileri"
+  },
+  "home": {
+    "greeting": {
+      "hiPlantLover": "Merhaba bitki aşığı!",
+      "goodMorning": "Günaydın! ⛅",
+      "goodAfternoon": "İyi Günler! ⛅",
+      "goodEvening": "İyi Akşamlar! 🌙"
+    },
+    "searchPlaceholder": "Bitkileri arayın",
+    "premium": {
+      "title": "ÜCRETSİZ Premium Mevcut",
+      "subtitle": "Hesabınızı yükseltmek için dokunun!"
+    },
+    "scanPlant": "Bitki Tarayın",
+    "featured": "Öne Çıkanlar",
+    "categories": {
+      "ediblePlants": "Yenilebilir Bitkiler",
+      "ferns": "Eğreltiotları",
+      "cactiAndSucculents": "Kaktüs ve Sukulentler",
+      "palms": "Palmiyeler"
+    },
+    "features": {
+      "identifyPlants": "PlantApp ile bitkileri kolayca\nnasıl tanımlarsınız?",
+      "speciesDifference": "Tür ve alt türler:\nfark nedir?"
+    }
+  },
+  "@home": {
+    "description": "Ana sayfa çevirileri"
   }
 }

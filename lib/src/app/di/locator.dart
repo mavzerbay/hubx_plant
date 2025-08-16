@@ -2,7 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:hubx/src/app/bloc/app_bloc.dart';
 import 'package:hubx/src/app/navigation/app_router.dart';
 import 'package:hubx/src/app/network/clients/base/build_dio_client.dart';
-import 'package:hubx/src/app/network/clients/movie_client.dart';
+import 'package:hubx/src/app/network/clients/data_client.dart';
 import 'package:hubx/src/app/resource/constants/env_constants.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
@@ -13,7 +13,7 @@ Future<void> setupLocator() async {
 
   final dio = buildDioClient(EnvConstants.baseApiURL);
 
-  locator.registerSingleton<MovieClient>(MovieClient(dio));
+  locator.registerSingleton<DataClient>(DataClient(dio));
 
   final talker = TalkerFlutter.init(
     settings: TalkerSettings(

@@ -149,5 +149,33 @@
   },
   "@onboarding": {
     "description": "Onboarding screen translations"
+  },
+  "home": {
+    "greeting": {
+      "hiPlantLover": "Hi, plant lover!",
+      "goodMorning": "Good Morning! ⛅",
+      "goodAfternoon": "Good Afternoon! ⛅",
+      "goodEvening": "Good Evening! 🌙"
+    },
+    "searchPlaceholder": "Search for plants",
+    "premium": {
+      "title": "FREE Premium Available",
+      "subtitle": "Tap to upgrade your account!"
+    },
+    "scanPlant": "Scan Plant",
+    "featured": "Featured",
+    "categories": {
+      "ediblePlants": "Edible Plants",
+      "ferns": "Ferns",
+      "cactiAndSucculents": "Cacti and Succulents",
+      "palms": "Palms"
+    },
+    "features": {
+      "identifyPlants": "How to identify plants easily\nwith PlantApp?",
+      "speciesDifference": "Species and subspecies:\nthe difference"
+    }
+  },
+  "@home": {
+    "description": "Home screen translations"
   }
 }

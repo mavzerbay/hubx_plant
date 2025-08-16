@@ -63,6 +63,9 @@ class TranslationsEn extends Translations {
 
 	/// Onboarding screen translations
 	@override late final _TranslationsOnboardingEn onboarding = _TranslationsOnboardingEn._(_root);
+
+	/// Home screen translations
+	@override late final _TranslationsHomeEn home = _TranslationsHomeEn._(_root);
 }
 
 // Path: app
@@ -260,6 +263,22 @@ class _TranslationsOnboardingEn extends TranslationsOnboardingTr {
 	]);
 }
 
+// Path: home
+class _TranslationsHomeEn extends TranslationsHomeTr {
+	_TranslationsHomeEn._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override late final _TranslationsHomeGreetingEn greeting = _TranslationsHomeGreetingEn._(_root);
+	@override String get searchPlaceholder => 'Search for plants';
+	@override late final _TranslationsHomePremiumEn premium = _TranslationsHomePremiumEn._(_root);
+	@override String get scanPlant => 'Scan Plant';
+	@override String get featured => 'Featured';
+	@override late final _TranslationsHomeCategoriesEn categories = _TranslationsHomeCategoriesEn._(_root);
+	@override late final _TranslationsHomeFeaturesEn features = _TranslationsHomeFeaturesEn._(_root);
+}
+
 // Path: app.theme
 class _TranslationsAppThemeEn extends TranslationsAppThemeTr {
 	_TranslationsAppThemeEn._(TranslationsEn root) : this._root = root, super.internal(root);
@@ -325,6 +344,54 @@ class _TranslationsOnboardingPage3En extends TranslationsOnboardingPage3Tr {
 		const TextSpan(text: 'Get plant '),
 		careguides('care guides'),
 	]);
+}
+
+// Path: home.greeting
+class _TranslationsHomeGreetingEn extends TranslationsHomeGreetingTr {
+	_TranslationsHomeGreetingEn._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get hiPlantLover => 'Hi, plant lover!';
+	@override String get goodMorning => 'Good Morning! ⛅';
+	@override String get goodAfternoon => 'Good Afternoon! ⛅';
+	@override String get goodEvening => 'Good Evening! 🌙';
+}
+
+// Path: home.premium
+class _TranslationsHomePremiumEn extends TranslationsHomePremiumTr {
+	_TranslationsHomePremiumEn._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'FREE Premium Available';
+	@override String get subtitle => 'Tap to upgrade your account!';
+}
+
+// Path: home.categories
+class _TranslationsHomeCategoriesEn extends TranslationsHomeCategoriesTr {
+	_TranslationsHomeCategoriesEn._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get ediblePlants => 'Edible Plants';
+	@override String get ferns => 'Ferns';
+	@override String get cactiAndSucculents => 'Cacti and Succulents';
+	@override String get palms => 'Palms';
+}
+
+// Path: home.features
+class _TranslationsHomeFeaturesEn extends TranslationsHomeFeaturesTr {
+	_TranslationsHomeFeaturesEn._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get identifyPlants => 'How to identify plants easily\nwith PlantApp?';
+	@override String get speciesDifference => 'Species and subspecies:\nthe difference';
 }
 
 /// Flat map(s) containing all translations.
@@ -449,6 +516,21 @@ extension on TranslationsEn {
 				const TextSpan(text: ' & '),
 				privacy('Privacy Policy'),
 			]);
+			case 'home.greeting.hiPlantLover': return 'Hi, plant lover!';
+			case 'home.greeting.goodMorning': return 'Good Morning! ⛅';
+			case 'home.greeting.goodAfternoon': return 'Good Afternoon! ⛅';
+			case 'home.greeting.goodEvening': return 'Good Evening! 🌙';
+			case 'home.searchPlaceholder': return 'Search for plants';
+			case 'home.premium.title': return 'FREE Premium Available';
+			case 'home.premium.subtitle': return 'Tap to upgrade your account!';
+			case 'home.scanPlant': return 'Scan Plant';
+			case 'home.featured': return 'Featured';
+			case 'home.categories.ediblePlants': return 'Edible Plants';
+			case 'home.categories.ferns': return 'Ferns';
+			case 'home.categories.cactiAndSucculents': return 'Cacti and Succulents';
+			case 'home.categories.palms': return 'Palms';
+			case 'home.features.identifyPlants': return 'How to identify plants easily\nwith PlantApp?';
+			case 'home.features.speciesDifference': return 'Species and subspecies:\nthe difference';
 			default: return null;
 		}
 	}
