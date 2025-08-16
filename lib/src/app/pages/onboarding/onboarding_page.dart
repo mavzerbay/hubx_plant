@@ -162,7 +162,7 @@ class _OnboardingPageState
               itemBuilder: (context) => [
                 PopupMenuItem(
                   value: ThemeMode.system,
-                  enabled: state.themeMode != ThemeMode.light,
+                  enabled: state.themeMode != ThemeMode.system,
                   child: Text(
                     locale.app.theme.system,
                     style: context.textTheme.bodyLarge?.copyWith(

@@ -127,7 +127,7 @@ class AppBloc extends BaseBloc<AppEvent, AppState> {
   ) async {
     await runBlocCatching(
       action: () async {
-        if (!state.isFirstLaunchApp) {
+        if (state.isFirstLaunchApp) {
           await CacheManager.instance.setBool(
             key: CacheKey.isFirstLaunchApp,
             value: false,

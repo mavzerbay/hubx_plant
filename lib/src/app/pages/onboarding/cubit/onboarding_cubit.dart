@@ -39,7 +39,12 @@ class OnboardingCubit extends BaseCubit<OnboardingState> {
   }
 
   void completeOnboarding() {
-    pageController.dispose();
     navigator.replace(const DashboardRoute());
+  }
+
+  @override
+  Future<void> close() {
+    pageController.dispose();
+    return super.close();
   }
 }
