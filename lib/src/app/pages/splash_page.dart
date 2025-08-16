@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hubx/gen/assets.gen.dart';
+import 'package:hubx/gen/translations.g.dart';
 import 'package:hubx/src/app/resource/dimens/app_dimen.dart';
 import 'package:hubx/src/app/resource/styles/app_colors.dart';
 import 'package:hubx/src/shared/extensions/color_extension.dart';
+import 'package:hubx/src/shared/extensions/theme_extensions.dart';
 
 @RoutePage()
 class SplashPage extends StatefulWidget {
@@ -93,7 +95,6 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
     AppColors.of(context);
     AppDimen.of(context);
     return Scaffold(
-      backgroundColor: Colors.black,
       body: SizedBox.expand(
         child: AnimatedBuilder(
           animation: Listenable.merge([_fadeController, _progressController]),
@@ -112,7 +113,6 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
                           width: double.infinity,
                           height: double.infinity,
                           padding: EdgeInsets.only(bottom: 110.h),
-                          color: Colors.black,
                           child: Center(
                             child: FadeTransition(
                               opacity: _fadeAnimation,
@@ -136,7 +136,6 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
                         ),
                 ),
 
-                // Progress Indicator
                 if (_showLogo)
                   Positioned(
                     bottom: 120.h,
@@ -147,7 +146,6 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          // Progress Bar
                           Container(
                             width: 0.4.sw,
                             height: 3.h,
@@ -156,9 +154,10 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
                               borderRadius: BorderRadius.circular(2.r),
                               child: LinearProgressIndicator(
                                 value: _progressAnimation.value,
-                                backgroundColor: Colors.grey.withOpacityX(0.3),
-                                valueColor: const AlwaysStoppedAnimation<Color>(
-                                  Color(0xFFFFD700),
+                                backgroundColor: context.colorScheme.onSurface
+                                    .withOpacityX(0.3),
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  AppColors.current.primaryColor,
                                 ),
                               ),
                             ),
@@ -166,11 +165,9 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
 
                           SizedBox(height: 16.h),
 
-                          // Loading Text
                           Text(
-                            'Yükleniyor...',
-                            style: TextStyle(
-                              color: Colors.white.withOpacityX(0.8),
+                            locale.global.loading,
+                            style: context.textTheme.bodyMedium?.copyWith(
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w400,
                             ),

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hubx/gen/translations.g.dart';
-import 'package:hubx/src/app/base/bloc/auth/auth_bloc.dart';
 import 'package:hubx/src/app/base/bloc/base_bloc.dart';
 import 'package:hubx/src/app/base/bloc/base_bloc_event.dart';
 import 'package:hubx/src/app/base/bloc/base_bloc_state.dart';
@@ -56,6 +55,8 @@ class AppBloc extends BaseBloc<AppEvent, AppState> {
             isAppInitiated: true,
           ),
         );
+
+        add(_AppLanguageChanged(locale: output.locale));
 
         unawaited(
           Future.microtask(() {
@@ -126,18 +127,17 @@ class AppBloc extends BaseBloc<AppEvent, AppState> {
   ) async {
     await runBlocCatching(
       action: () async {
-        if (state.isFirstLaunchApp) {
+        if (!state.isFirstLaunchApp) {
           await CacheManager.instance.setBool(
             key: CacheKey.isFirstLaunchApp,
             value: false,
           );
           emit(state.copyWith(isFirstLaunchApp: false));
+          unawaited(navigator.replace(const OnboardingRoute()));
+        } else {
+          unawaited(navigator.replace(const DashboardRoute()));
         }
-        unawaited(navigator.replaceAll([const DashboardRoute()]));
       },
-      doOnError: (appException) async => authBloc.add(
-        const AuthEvent.onLogoutButtonPressed(isForceLogout: true),
-      ),
       handleLoading: false,
     );
   }

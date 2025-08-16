@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hubx/src/app/base/bloc/auth/auth_bloc.dart';
 import 'package:hubx/src/app/bloc/app_bloc.dart';
 import 'package:hubx/src/app/navigation/app_navigator_impl.dart';
 import 'package:hubx/src/domain/domain/app_navigator.dart';
@@ -40,7 +39,6 @@ extension MediaQueryExtension on BuildContext {
 
 extension BlocExtension on BuildContext {
   AppBloc get appBloc => read<AppBloc>();
-  AuthBloc get authBloc => read<AuthBloc>();
 }
 
 extension NavigationExtension on BuildContext {

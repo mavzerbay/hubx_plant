@@ -10,7 +10,11 @@ class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
     AutoRoute(page: SplashRoute.page, initial: true),
-
+    CustomRoute<OnboardingRoute>(
+      page: OnboardingRoute.page,
+      transitionsBuilder: TransitionsBuilders.fadeIn,
+      duration: const Duration(milliseconds: 400),
+    ),
     CustomRoute<DashboardRoute>(
       page: DashboardRoute.page,
       transitionsBuilder: TransitionsBuilders.fadeIn,

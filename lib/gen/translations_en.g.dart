@@ -38,6 +38,7 @@ class TranslationsEn extends Translations {
 	TranslationsEn $copyWith({TranslationMetadata<AppLocale, Translations>? meta}) => TranslationsEn(meta: meta ?? this.$meta);
 
 	// Translations
+	@override late final _TranslationsAppEn app = _TranslationsAppEn._(_root);
 	@override late final _TranslationsBottomNavigationEn bottomNavigation = _TranslationsBottomNavigationEn._(_root);
 
 	/// Translations for global buttons and usages
@@ -60,17 +61,18 @@ class TranslationsEn extends Translations {
 	/// Error messages
 	@override late final _TranslationsExceptionEn exception = _TranslationsExceptionEn._(_root);
 
-	/// Translations related to authentication
-	@override late final _TranslationsAuthEn auth = _TranslationsAuthEn._(_root);
+	/// Onboarding screen translations
+	@override late final _TranslationsOnboardingEn onboarding = _TranslationsOnboardingEn._(_root);
+}
 
-	/// Translations related to registration
-	@override late final _TranslationsRegisterEn register = _TranslationsRegisterEn._(_root);
+// Path: app
+class _TranslationsAppEn extends TranslationsAppTr {
+	_TranslationsAppEn._(TranslationsEn root) : this._root = root, super.internal(root);
 
-	/// Translations related to profile
-	@override late final _TranslationsProfileEn profile = _TranslationsProfileEn._(_root);
+	final TranslationsEn _root; // ignore: unused_field
 
-	/// Translations related to limited offer modal
-	@override late final _TranslationsLimitedOfferModalEn limitedOfferModal = _TranslationsLimitedOfferModalEn._(_root);
+	// Translations
+	@override late final _TranslationsAppThemeEn theme = _TranslationsAppThemeEn._(_root);
 }
 
 // Path: bottomNavigation
@@ -125,6 +127,7 @@ class _TranslationsGlobalEn extends TranslationsGlobalTr {
 	@override String get details => 'Details';
 	@override String get directions => 'Directions';
 	@override String get next => 'Next';
+	@override String get kContinue => 'Continue';
 	@override String get skip => 'Skip';
 }
 
@@ -237,66 +240,37 @@ class _TranslationsExceptionEn extends TranslationsExceptionTr {
 	};
 }
 
-// Path: auth
-class _TranslationsAuthEn extends TranslationsAuthTr {
-	_TranslationsAuthEn._(TranslationsEn root) : this._root = root, super.internal(root);
+// Path: onboarding
+class _TranslationsOnboardingEn extends TranslationsOnboardingTr {
+	_TranslationsOnboardingEn._(TranslationsEn root) : this._root = root, super.internal(root);
 
 	final TranslationsEn _root; // ignore: unused_field
 
 	// Translations
-	@override String get logoutConfirmation => 'Are you sure you want to log out?';
-	@override String get areYouSure => 'Are you sure?';
-	@override String get areYouSureToUpload => 'Are you sure you want to upload the photo?';
-	@override String get photoUploadSuccess => 'Photo uploaded successfully!';
-}
-
-// Path: register
-class _TranslationsRegisterEn extends TranslationsRegisterTr {
-	_TranslationsRegisterEn._(TranslationsEn root) : this._root = root, super.internal(root);
-
-	final TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override String get title => 'Welcome';
-	@override String get subtitle => 'Tempus varius a vitae interdum id\ntortor elementum tristique eleifend at.';
-	@override late final _TranslationsRegisterButtonsEn buttons = _TranslationsRegisterButtonsEn._(_root);
-	@override late final _TranslationsRegisterGdprEn gdpr = _TranslationsRegisterGdprEn._(_root);
-	@override TextSpan doYouHaveAccount({required InlineSpanBuilder login}) => TextSpan(children: [
-		const TextSpan(text: 'Do you already have an account? '),
-		login('Login'),
-		const TextSpan(text: '!'),
+	@override String get getStarted => 'Get Started';
+	@override String get kContinue => 'Continue';
+	@override late final _TranslationsOnboardingPage1En page1 = _TranslationsOnboardingPage1En._(_root);
+	@override late final _TranslationsOnboardingPage2En page2 = _TranslationsOnboardingPage2En._(_root);
+	@override late final _TranslationsOnboardingPage3En page3 = _TranslationsOnboardingPage3En._(_root);
+	@override TextSpan termsText({required InlineSpanBuilder terms, required InlineSpanBuilder privacy}) => TextSpan(children: [
+		const TextSpan(text: 'By tapping next, you are agreeing to PlantID\n'),
+		terms('Terms of Use'),
+		const TextSpan(text: ' & '),
+		privacy('Privacy Policy'),
 	]);
 }
 
-// Path: profile
-class _TranslationsProfileEn extends TranslationsProfileTr {
-	_TranslationsProfileEn._(TranslationsEn root) : this._root = root, super.internal(root);
+// Path: app.theme
+class _TranslationsAppThemeEn extends TranslationsAppThemeTr {
+	_TranslationsAppThemeEn._(TranslationsEn root) : this._root = root, super.internal(root);
 
 	final TranslationsEn _root; // ignore: unused_field
 
 	// Translations
-	@override String get title => 'Profile Details';
-	@override String get limitedOffer => 'Limited Offer';
-	@override String get addPhoto => 'Add Photo';
-	@override String get favoriteMovies => 'Favorite Movies';
-	@override String get noFavoriteMovies => 'No favorite movies yet';
-	@override String get followFavoriteMovies => 'Follow your favorite movies from here';
-	@override late final _TranslationsProfileSettingsEn settings = _TranslationsProfileSettingsEn._(_root);
-	@override late final _TranslationsProfileAddPhotoPageEn addPhotoPage = _TranslationsProfileAddPhotoPageEn._(_root);
-}
-
-// Path: limitedOfferModal
-class _TranslationsLimitedOfferModalEn extends TranslationsLimitedOfferModalTr {
-	_TranslationsLimitedOfferModalEn._(TranslationsEn root) : this._root = root, super.internal(root);
-
-	final TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override String get title => 'Limited Offer';
-	@override String get subtitle => 'Choose a token package to earn bonuses and unlock new episodes!';
-	@override late final _TranslationsLimitedOfferModalBonusSectionEn bonusSection = _TranslationsLimitedOfferModalBonusSectionEn._(_root);
-	@override late final _TranslationsLimitedOfferModalPackageSectionEn packageSection = _TranslationsLimitedOfferModalPackageSectionEn._(_root);
-	@override late final _TranslationsLimitedOfferModalButtonEn button = _TranslationsLimitedOfferModalButtonEn._(_root);
+	@override String get title => 'App Theme';
+	@override String get system => 'System';
+	@override String get light => 'Light';
+	@override String get dark => 'Dark';
 }
 
 // Path: inputs.hints
@@ -312,96 +286,45 @@ class _TranslationsInputsHintsEn extends TranslationsInputsHintsTr {
 	@override String get name => 'You can enter your name here';
 }
 
-// Path: register.buttons
-class _TranslationsRegisterButtonsEn extends TranslationsRegisterButtonsTr {
-	_TranslationsRegisterButtonsEn._(TranslationsEn root) : this._root = root, super.internal(root);
+// Path: onboarding.page1
+class _TranslationsOnboardingPage1En extends TranslationsOnboardingPage1Tr {
+	_TranslationsOnboardingPage1En._(TranslationsEn root) : this._root = root, super.internal(root);
 
 	final TranslationsEn _root; // ignore: unused_field
 
 	// Translations
-	@override String get submit => 'Register Now';
-	@override TextSpan gdpr({required InlineSpanBuilder gdpr}) => TextSpan(children: [
-		const TextSpan(text: 'I have read and agree to the '),
-		gdpr('User Agreement'),
-		const TextSpan(text: '. Please read this agreement before proceeding.'),
+	@override TextSpan title({required InlineSpanBuilder app}) => TextSpan(children: [
+		const TextSpan(text: 'Welcome to '),
+		app('PlantApp'),
+	]);
+	@override String get subtitle => 'Identify more than 3000+ plants and 88% accuracy.';
+}
+
+// Path: onboarding.page2
+class _TranslationsOnboardingPage2En extends TranslationsOnboardingPage2Tr {
+	_TranslationsOnboardingPage2En._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override TextSpan title({required InlineSpanBuilder identify}) => TextSpan(children: [
+		const TextSpan(text: 'Take a photo to '),
+		identify('identify'),
+		const TextSpan(text: '\nthe plant!'),
 	]);
 }
 
-// Path: register.gdpr
-class _TranslationsRegisterGdprEn extends TranslationsRegisterGdprTr {
-	_TranslationsRegisterGdprEn._(TranslationsEn root) : this._root = root, super.internal(root);
+// Path: onboarding.page3
+class _TranslationsOnboardingPage3En extends TranslationsOnboardingPage3Tr {
+	_TranslationsOnboardingPage3En._(TranslationsEn root) : this._root = root, super.internal(root);
 
 	final TranslationsEn _root; // ignore: unused_field
 
 	// Translations
-	@override String get title => 'User Agreement';
-	@override String get content => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tincidunt vel quam non porta. Sed eget arcu pellentesque, euismod lacus vel, vehicula magna. Ut leo tortor, auctor nec odio nec, vehicula porta lectus. Mauris quis tristique tellus. Aliquam nisi mi, semper sit amet ex at, elementum ultricies enim. Maecenas eleifend risus sapien, in ultricies lorem aliquam sed. Suspendisse non porta mi, eget rhoncus tellus. Morbi a ligula a ligula viverra tempor a vel dolor. Nullam egestas ultricies pretium. Aliquam sagittis massa leo, in hendrerit tortor consectetur ut. Aliquam iaculis ligula sit amet enim bibendum, ut pharetra sapien rutrum. Fusce sit amet lorem id nunc volutpat interdum eu eu tellus. Cras id orci turpis. Sed posuere arcu nec vestibulum lobortis.\n\nSed lacinia luctus venenatis. Donec bibendum congue condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sapien felis, fermentum sed tellus quis, tincidunt congue ipsum. Vestibulum nec purus non quam posuere varius vitae sed purus. Aenean et nulla nec sapien finibus imperdiet. Nam fermentum lobortis tellus. Etiam fermentum vulputate tellus eu sollicitudin.';
-}
-
-// Path: profile.settings
-class _TranslationsProfileSettingsEn extends TranslationsProfileSettingsTr {
-	_TranslationsProfileSettingsEn._(TranslationsEn root) : this._root = root, super.internal(root);
-
-	final TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override String get title => 'Settings';
-	@override String get theme => 'Theme';
-	@override String get language => 'Language';
-	@override String get logout => 'Logout';
-	@override String get dark => 'Dark';
-	@override String get light => 'Light';
-	@override String get system => 'System';
-	@override String get turkish => 'Türkçe';
-	@override String get english => 'English';
-}
-
-// Path: profile.addPhotoPage
-class _TranslationsProfileAddPhotoPageEn extends TranslationsProfileAddPhotoPageTr {
-	_TranslationsProfileAddPhotoPageEn._(TranslationsEn root) : this._root = root, super.internal(root);
-
-	final TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override String get title => 'Upload Your Photos';
-	@override String get subtitle => 'Resources out incentivize\nrelaxation floor loss cc.';
-	@override String get continueButton => 'Continue';
-}
-
-// Path: limitedOfferModal.bonusSection
-class _TranslationsLimitedOfferModalBonusSectionEn extends TranslationsLimitedOfferModalBonusSectionTr {
-	_TranslationsLimitedOfferModalBonusSectionEn._(TranslationsEn root) : this._root = root, super.internal(root);
-
-	final TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override String get title => 'Bonuses You\'ll Get';
-	@override String get premiumAccount => 'Premium\nAccount';
-	@override String get moreMatches => 'More\nMatches';
-	@override String get featured => 'Featured\nProfile';
-	@override String get moreLikes => 'More\nLikes';
-}
-
-// Path: limitedOfferModal.packageSection
-class _TranslationsLimitedOfferModalPackageSectionEn extends TranslationsLimitedOfferModalPackageSectionTr {
-	_TranslationsLimitedOfferModalPackageSectionEn._(TranslationsEn root) : this._root = root, super.internal(root);
-
-	final TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override String get title => 'Choose a token package to unlock';
-	@override String get token => 'Token';
-	@override String get weeklyPrice => 'Per week';
-}
-
-// Path: limitedOfferModal.button
-class _TranslationsLimitedOfferModalButtonEn extends TranslationsLimitedOfferModalButtonTr {
-	_TranslationsLimitedOfferModalButtonEn._(TranslationsEn root) : this._root = root, super.internal(root);
-
-	final TranslationsEn _root; // ignore: unused_field
-
-	// Translations
-	@override String get viewAllTokens => 'View All Tokens';
+	@override TextSpan title({required InlineSpanBuilder careguides}) => TextSpan(children: [
+		const TextSpan(text: 'Get plant '),
+		careguides('care guides'),
+	]);
 }
 
 /// Flat map(s) containing all translations.
@@ -409,6 +332,10 @@ class _TranslationsLimitedOfferModalButtonEn extends TranslationsLimitedOfferMod
 extension on TranslationsEn {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
+			case 'app.theme.title': return 'App Theme';
+			case 'app.theme.system': return 'System';
+			case 'app.theme.light': return 'Light';
+			case 'app.theme.dark': return 'Dark';
 			case 'bottomNavigation.home': return 'Home';
 			case 'bottomNavigation.profile': return 'Profile';
 			case 'global.ok': return 'OK';
@@ -445,6 +372,7 @@ extension on TranslationsEn {
 			case 'global.details': return 'Details';
 			case 'global.directions': return 'Directions';
 			case 'global.next': return 'Next';
+			case 'global.kContinue': return 'Continue';
 			case 'global.skip': return 'Skip';
 			case 'login.title': return 'Welcome';
 			case 'login.subtitle': return 'Tempus varius a vitae interdum id\ntortor elementum tristique eleifend at.';
@@ -499,54 +427,28 @@ extension on TranslationsEn {
 			case 'exception.errorCodes.USER_EXISTS': return 'User already exists';
 			case 'exception.errorCodes.INVALID_CREDENTIALS': return 'Invalid email or password';
 			case 'exception.errorCodes.REQUEST_ENTITY_TOO_LARGE': return 'The uploaded file is too large, please upload a smaller file!';
-			case 'auth.logoutConfirmation': return 'Are you sure you want to log out?';
-			case 'auth.areYouSure': return 'Are you sure?';
-			case 'auth.areYouSureToUpload': return 'Are you sure you want to upload the photo?';
-			case 'auth.photoUploadSuccess': return 'Photo uploaded successfully!';
-			case 'register.title': return 'Welcome';
-			case 'register.subtitle': return 'Tempus varius a vitae interdum id\ntortor elementum tristique eleifend at.';
-			case 'register.buttons.submit': return 'Register Now';
-			case 'register.buttons.gdpr': return ({required InlineSpanBuilder gdpr}) => TextSpan(children: [
-				const TextSpan(text: 'I have read and agree to the '),
-				gdpr('User Agreement'),
-				const TextSpan(text: '. Please read this agreement before proceeding.'),
+			case 'onboarding.getStarted': return 'Get Started';
+			case 'onboarding.kContinue': return 'Continue';
+			case 'onboarding.page1.title': return ({required InlineSpanBuilder app}) => TextSpan(children: [
+				const TextSpan(text: 'Welcome to '),
+				app('PlantApp'),
 			]);
-			case 'register.gdpr.title': return 'User Agreement';
-			case 'register.gdpr.content': return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tincidunt vel quam non porta. Sed eget arcu pellentesque, euismod lacus vel, vehicula magna. Ut leo tortor, auctor nec odio nec, vehicula porta lectus. Mauris quis tristique tellus. Aliquam nisi mi, semper sit amet ex at, elementum ultricies enim. Maecenas eleifend risus sapien, in ultricies lorem aliquam sed. Suspendisse non porta mi, eget rhoncus tellus. Morbi a ligula a ligula viverra tempor a vel dolor. Nullam egestas ultricies pretium. Aliquam sagittis massa leo, in hendrerit tortor consectetur ut. Aliquam iaculis ligula sit amet enim bibendum, ut pharetra sapien rutrum. Fusce sit amet lorem id nunc volutpat interdum eu eu tellus. Cras id orci turpis. Sed posuere arcu nec vestibulum lobortis.\n\nSed lacinia luctus venenatis. Donec bibendum congue condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sapien felis, fermentum sed tellus quis, tincidunt congue ipsum. Vestibulum nec purus non quam posuere varius vitae sed purus. Aenean et nulla nec sapien finibus imperdiet. Nam fermentum lobortis tellus. Etiam fermentum vulputate tellus eu sollicitudin.';
-			case 'register.doYouHaveAccount': return ({required InlineSpanBuilder login}) => TextSpan(children: [
-				const TextSpan(text: 'Do you already have an account? '),
-				login('Login'),
-				const TextSpan(text: '!'),
+			case 'onboarding.page1.subtitle': return 'Identify more than 3000+ plants and 88% accuracy.';
+			case 'onboarding.page2.title': return ({required InlineSpanBuilder identify}) => TextSpan(children: [
+				const TextSpan(text: 'Take a photo to '),
+				identify('identify'),
+				const TextSpan(text: '\nthe plant!'),
 			]);
-			case 'profile.title': return 'Profile Details';
-			case 'profile.limitedOffer': return 'Limited Offer';
-			case 'profile.addPhoto': return 'Add Photo';
-			case 'profile.favoriteMovies': return 'Favorite Movies';
-			case 'profile.noFavoriteMovies': return 'No favorite movies yet';
-			case 'profile.followFavoriteMovies': return 'Follow your favorite movies from here';
-			case 'profile.settings.title': return 'Settings';
-			case 'profile.settings.theme': return 'Theme';
-			case 'profile.settings.language': return 'Language';
-			case 'profile.settings.logout': return 'Logout';
-			case 'profile.settings.dark': return 'Dark';
-			case 'profile.settings.light': return 'Light';
-			case 'profile.settings.system': return 'System';
-			case 'profile.settings.turkish': return 'Türkçe';
-			case 'profile.settings.english': return 'English';
-			case 'profile.addPhotoPage.title': return 'Upload Your Photos';
-			case 'profile.addPhotoPage.subtitle': return 'Resources out incentivize\nrelaxation floor loss cc.';
-			case 'profile.addPhotoPage.continueButton': return 'Continue';
-			case 'limitedOfferModal.title': return 'Limited Offer';
-			case 'limitedOfferModal.subtitle': return 'Choose a token package to earn bonuses and unlock new episodes!';
-			case 'limitedOfferModal.bonusSection.title': return 'Bonuses You\'ll Get';
-			case 'limitedOfferModal.bonusSection.premiumAccount': return 'Premium\nAccount';
-			case 'limitedOfferModal.bonusSection.moreMatches': return 'More\nMatches';
-			case 'limitedOfferModal.bonusSection.featured': return 'Featured\nProfile';
-			case 'limitedOfferModal.bonusSection.moreLikes': return 'More\nLikes';
-			case 'limitedOfferModal.packageSection.title': return 'Choose a token package to unlock';
-			case 'limitedOfferModal.packageSection.token': return 'Token';
-			case 'limitedOfferModal.packageSection.weeklyPrice': return 'Per week';
-			case 'limitedOfferModal.button.viewAllTokens': return 'View All Tokens';
+			case 'onboarding.page3.title': return ({required InlineSpanBuilder careguides}) => TextSpan(children: [
+				const TextSpan(text: 'Get plant '),
+				careguides('care guides'),
+			]);
+			case 'onboarding.termsText': return ({required InlineSpanBuilder terms, required InlineSpanBuilder privacy}) => TextSpan(children: [
+				const TextSpan(text: 'By tapping next, you are agreeing to PlantID\n'),
+				terms('Terms of Use'),
+				const TextSpan(text: ' & '),
+				privacy('Privacy Policy'),
+			]);
 			default: return null;
 		}
 	}

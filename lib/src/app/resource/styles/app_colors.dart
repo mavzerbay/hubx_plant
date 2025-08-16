@@ -36,6 +36,7 @@ class AppColors {
   static const Color plantGreen = Color(0xFF4CAF50);
   static const Color plantDarkGreen = Color(0xFF388E3C);
   static const Color plantLightGreen = Color(0xFFC8E6C9);
+  static const Color plantSecondaryGreen = Color(0xFF597165);
   static const Color plantWhite = Color(0xFFFFFFFF);
   static const Color plantBackground = Color(0xFFF8F8F8);
   static const Color plantCard = Color(0xFFF5F5F5);
@@ -52,8 +53,8 @@ class AppColors {
     backgroundColor: plantBackground,
     surfaceColor: plantWhite,
     cardColor: plantCard,
-    primaryTextColor: Color(0xFF212121),
-    secondaryTextColor: plantDarkGray,
+    primaryTextColor: Color(0xFF13231B),
+    secondaryTextColor: Color(0xB213231B),
     passiveColor: plantGray,
     successColor: plantGreen,
     errorColor: plantError,
