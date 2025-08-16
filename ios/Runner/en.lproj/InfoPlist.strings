@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Runner
+
+  Created by Erbay Mavzer on 10.08.2025.
+  
+*/
+NSCameraUsageDescription="It is used for taking photos from the PlantHubX application.";
+NSPhotoLibraryUsageDescription="It is used for selecting photos from the PlantHubX application.";

@@ -1,0 +1,200 @@
+{
+  "bottomNavigation": {
+    "home": "Ana Sayfa",
+    "profile": "Profil"
+  },
+  "global": {
+    "ok": "Tamam",
+    "cancel": "İptal",
+    "retry": "Tekrar Dene",
+    "yes": "Evet",
+    "no": "Hayır",
+    "close": "Kapat",
+    "decline": "Reddet",
+    "accept": "Kabul Et",
+    "save": "Kaydet",
+    "delete": "Sil",
+    "reset": "Sıfırla",
+    "loading": "Yükleniyor...",
+    "goToService": "Hizmete Git",
+    "new": "Yeni",
+    "resultCount(rich)": "$count Sonuç bulundu",
+    "clear": "Temizle",
+    "filter": "Filtrele",
+    "applyFilter": "Filtreyi Uygula",
+    "showMore": "Daha Fazlası",
+    "showLess": "Daha Az",
+    "showAll": "Tümünü Göster",
+    "location": "Konum",
+    "myLocation": "Konumum",
+    "hello": "Merhaba $name",
+    "show": "Göster",
+    "hide": "Gizle",
+    "refresh": "Yenile",
+    "dayError": "Gün seçimi gereklidir!",
+    "details": "Detaylar",
+    "directions": "Yol Tarifi",
+    "next": "İleri",
+    "skip": "Atla"
+  },
+  "@global": {
+    "description": "Global buton ve kullanımlar için çeviriler"
+  },
+  "login": {
+    "title": "Merhabalar",
+    "subtitle": "Tempus varius a vitae interdum id\ntortor elementum tristique eleifend at.",
+    "forgotPassword": "Şifremi Unuttum",
+    "loginButton": "Giriş Yap",
+    "registerButton": "Üye Ol",
+    "dontHaveAccount(rich)": "Bir hesabınız yok mu? ${register(Kayıt Ol)}!",
+    "invalidCredentials": "Geçersiz e-posta veya şifre!",
+    "loginSuccess": "Başarıyla giriş yapıldı!",
+    "loginFailed": "Giriş yapılamadı!"
+  },
+  "buttons": {
+    "takePhoto": "Fotoğraf Çek",
+    "selectFromGallery": "Galeriden Seç",
+    "selectFromCamera": "Kameradan Seç",
+    "selectFromFiles": "Dosyalardan Seç"
+  },
+  "@buttons": {
+    "description": "Butonlar için çeviriler"
+  },
+  "snackbars": {
+    "success": "Başarılı",
+    "error": "Hata",
+    "info": "Bilgi",
+    "warning": "Uyarı"
+  },
+  "@snackbars": {
+    "description": "Snack bar'lar için çeviriler"
+  },
+  "inputs": {
+    "hints": {
+      "email": "E-posta adresinizi buraya yazabilirsiniz",
+      "password": "Parolanızı buraya yazabilirsiniz",
+      "confirmPassword": "Parolanızı onaylamak için buraya yazabilirsiniz",
+      "name": "Adınızı buraya yazabilirsiniz"
+    },
+    "@hints": {
+      "description": "Giriş alanları için ipuçları"
+    },
+    "email": "E-posta",
+    "password": "Şifre",
+    "confirmPassword": "Parolayı Onayla",
+    "name": "Ad Soyad"
+  },
+  "@inputs": {
+    "description": "Giriş alanları ile ilgili çeviriler"
+  },
+  "validation": {
+    "emailCannotBeEmpty": "E-posta adresi boş bırakılamaz!",
+    "emailIsNotValid": "Lütfen geçerli bir e-posta adresi girin!",
+    "usernameIsNotValid": "Lütfen geçerli bir kullanıcı adı girin!",
+    "invalidDate": "Lütfen geçerli bir tarih girin!",
+    "passwordCannotBeEmpty": "Şifre boş bırakılamaz!",
+    "passwordIsNotValid": "Parolanız en az 1 büyük harf, 1 küçük harf, 1 rakam ve işaret (#?!@%^&*-) içermelidir!",
+    "passwordsNotMatch": "Parolalar eşleşmiyor!",
+    "required": "$name alanı boş bırakılamaz!",
+    "invalidPhoneNumber": "Lütfen geçerli bir telefon numarası girin!",
+    "minLength": "$name alanı en az $min karakter olmalıdır!",
+    "maxLength": "$name alanı en fazla $max karakter olmalıdır!",
+    "minDate": "$name alanı $min tarihinden küçük olamaz!",
+    "maxDate": "$name alanı $max tarihinden büyük olamaz!",
+    "requiredTrue": "$name alanını onaylamalısınız!",
+    "pattern": "$name alanı geçerli bir formatta olmalıdır!"
+  },
+  "@validation": {
+    "description": "Doğrulama mesajları"
+  },
+  "exception": {
+    "noInternetConnection": "İnternet bağlantısı yok!",
+    "timeout": "İşlem zaman aşımına uğradı!",
+    "unknown": "Bilinmeyen bir hata oluştu!",
+    "cancellation": "İşlem iptal edildi!",
+    "tokenExpired": "Oturum süreniz doldu!",
+    "server": "Sunucu ile iletişim sırasında bir hata oluştu!",
+    "errorCodes(map)": {
+      "USER_EXISTS": "Kullanıcı zaten mevcut",
+      "INVALID_CREDENTIALS": "Geçersiz e-posta veya şifre",
+      "REQUEST_ENTITY_TOO_LARGE": "Gönderilen fotoğraf çok büyük, lütfen daha küçük bir fotoğraf yükleyin!"
+    }
+  },
+  "@exception": {
+    "description": "Hata mesajları"
+  },
+  "auth": {
+    "logoutConfirmation": "Çıkış yapmak istediğinize emin misiniz?",
+    "areYouSure": "Emin misiniz?",
+    "areYouSureToUpload": "Fotoğraf yüklemek istediğinize emin misiniz?",
+    "photoUploadSuccess": "Fotoğraf başarıyla yüklendi!"
+  },
+  "@auth": {
+    "description": "Kimlik doğrulama ile ilgili çeviriler"
+  },
+  "register": {
+    "title": "Hoşgeldiniz",
+    "subtitle": "Tempus varius a vitae interdum id\ntortor elementum tristique eleifend at.",
+    "buttons": {
+      "submit": "Şimdi Kaydol",
+      "gdpr(rich)": "${gdpr(Kullanıcı sözleşmesini)} okudum ve kabul ediyorum. Bu sözleşmeyi okuyarak devam ediniz lütfen"
+    },
+    "gdpr": {
+      "title": "Kullanıcı Sözleşmesi",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tincidunt vel quam non porta. Sed eget arcu pellentesque, euismod lacus vel, vehicula magna. Ut leo tortor, auctor nec odio nec, vehicula porta lectus. Mauris quis tristique tellus. Aliquam nisi mi, semper sit amet ex at, elementum ultricies enim. Maecenas eleifend risus sapien, in ultricies lorem aliquam sed. Suspendisse non porta mi, eget rhoncus tellus. Morbi a ligula a ligula viverra tempor a vel dolor. Nullam egestas ultricies pretium. Aliquam sagittis massa leo, in hendrerit tortor consectetur ut. Aliquam iaculis ligula sit amet enim bibendum, ut pharetra sapien rutrum. Fusce sit amet lorem id nunc volutpat interdum eu eu tellus. Cras id orci turpis. Sed posuere arcu nec vestibulum lobortis.\n\nSed lacinia luctus venenatis. Donec bibendum congue condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sapien felis, fermentum sed tellus quis, tincidunt congue ipsum. Vestibulum nec purus non quam posuere varius vitae sed purus. Aenean et nulla nec sapien finibus imperdiet. Nam fermentum lobortis tellus. Etiam fermentum vulputate tellus eu sollicitudin."
+    },
+    "doYouHaveAccount(rich)": "Zaten bir hesabın var mı? ${login(Giriş Yap)}!"
+  },
+  "@register": {
+    "description": "Kayıt ile ilgili çeviriler"
+  },
+  "profile": {
+    "title": "Profil Detayı",
+    "limitedOffer": "Sınırlı Teklif",
+    "addPhoto": "Fotoğraf Ekle",
+    "favoriteMovies": "Beğendiğim Filmler",
+    "noFavoriteMovies": "Henüz beğenilen film yok",
+    "followFavoriteMovies": "Beğendiğiniz filmleri buradan takip edin",
+    "settings": {
+      "title": "Ayarlar",
+      "theme": "Tema",
+      "language": "Dil",
+      "logout": "Çıkış Yap",
+      "dark": "Karanlık",
+      "light": "Aydınlık",
+      "system": "Sistem",
+      "turkish": "Türkçe",
+      "english": "English"
+    },
+    "addPhotoPage": {
+      "title": "Fotoğraflarınızı Yükleyin",
+      "subtitle": "Resources out incentivize\nrelaxation floor loss cc.",
+      "continueButton": "Devam Et"
+    }
+  },
+  "@profile": {
+    "description": "Profil ile ilgili çeviriler"
+  },
+  "limitedOfferModal": {
+    "title": "Sınırlı Teklif",
+    "subtitle": "Jeton paketi'ni seçerek bonus kazanın ve yeni bölümlerin kilidini açın!",
+    "bonusSection": {
+      "title": "Alacağınız Bonuslar",
+      "premiumAccount": "Premium\nHesap",
+      "moreMatches": "Daha\nFazla Eşleşme",
+      "featured": "Öne\nÇıkarma",
+      "moreLikes": "Daha\nFazla Beğeni"
+    },
+    "packageSection": {
+      "title": "Kilidi açmak için bir jeton paketi seçin",
+      "token": "Jeton",
+      "weeklyPrice": "Başına haftalık"
+    },
+    "button": {
+      "viewAllTokens": "Tüm Jetonları Gör"
+    }
+  },
+  "@limitedOfferModal": {
+    "description": "Sınırlı teklif modal'ı ile ilgili çeviriler"
+  }
+}

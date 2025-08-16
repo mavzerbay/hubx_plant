@@ -1,0 +1,200 @@
+{
+  "bottomNavigation": {
+    "home": "Home",
+    "profile": "Profile"
+  },
+  "global": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "retry": "Retry",
+    "yes": "Yes",
+    "no": "No",
+    "close": "Close",
+    "decline": "Decline",
+    "accept": "Accept",
+    "save": "Save",
+    "delete": "Delete",
+    "reset": "Reset",
+    "loading": "Loading...",
+    "goToService": "Go to Service",
+    "new": "New",
+    "resultCount(rich)": "$count Results found",
+    "clear": "Clear",
+    "filter": "Filter",
+    "applyFilter": "Apply Filter",
+    "showMore": "Show More",
+    "showLess": "Show Less",
+    "showAll": "Show All",
+    "location": "Location",
+    "myLocation": "My Location",
+    "hello": "Hello $name",
+    "show": "Show",
+    "hide": "Hide",
+    "refresh": "Refresh",
+    "dayError": "Day selection required!",
+    "details": "Details",
+    "directions": "Directions",
+    "next": "Next",
+    "skip": "Skip"
+  },
+  "@global": {
+    "description": "Translations for global buttons and usages"
+  },
+  "login": {
+    "title": "Welcome",
+    "subtitle": "Tempus varius a vitae interdum id\ntortor elementum tristique eleifend at.",
+    "forgotPassword": "Forgot Password",
+    "loginButton": "Login",
+    "registerButton": "Register",
+    "dontHaveAccount(rich)": "Don't have an account? ${register(Register)}!",
+    "invalidCredentials": "Invalid email or password!",
+    "loginSuccess": "Logged in successfully!",
+    "loginFailed": "Login failed!"
+  },
+  "buttons": {
+    "takePhoto": "Take Photo",
+    "selectFromGallery": "Select from Gallery",
+    "selectFromCamera": "Select from Camera",
+    "selectFromFiles": "Select from Files"
+  },
+  "@buttons": {
+    "description": "Translations for buttons"
+  },
+  "snackbars": {
+    "success": "Success",
+    "error": "Error",
+    "info": "Info",
+    "warning": "Warning"
+  },
+  "@snackbars": {
+    "description": "Translations for snackbars"
+  },
+  "inputs": {
+    "hints": {
+      "email": "You can enter your email address here",
+      "password": "You can enter your password here",
+      "confirmPassword": "You can confirm your password here",
+      "name": "You can enter your name here"
+    },
+    "@hints": {
+      "description": "Hints for input fields"
+    },
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "name": "Full Name"
+  },
+  "@inputs": {
+    "description": "Translations related to input fields"
+  },
+  "validation": {
+    "emailCannotBeEmpty": "Email address cannot be empty!",
+    "emailIsNotValid": "Please enter a valid email address!",
+    "usernameIsNotValid": "Please enter a valid username!",
+    "invalidDate": "Please enter a valid date!",
+    "passwordCannotBeEmpty": "Password cannot be empty!",
+    "passwordIsNotValid": "Your password must include at least one uppercase letter, one lowercase letter, one digit, and a special character (#?!@%^&*-).",
+    "passwordsNotMatch": "Passwords do not match!",
+    "required": "$name field cannot be empty!",
+    "invalidPhoneNumber": "Please enter a valid phone number!",
+    "minLength": "$name field must be at least $min characters!",
+    "maxLength": "$name field must be at most $max characters!",
+    "minDate": "$name field cannot be earlier than $min!",
+    "maxDate": "$name field cannot be later than $max!",
+    "requiredTrue": "You must approve the $name field!",
+    "pattern": "$name field must be in a valid format!"
+  },
+  "@validation": {
+    "description": "Validation messages"
+  },
+  "exception": {
+    "noInternetConnection": "No internet connection!",
+    "timeout": "The operation timed out!",
+    "unknown": "An unknown error occurred!",
+    "cancellation": "The operation was cancelled!",
+    "tokenExpired": "Your session has expired!",
+    "server": "An error occurred while communicating with the server!",
+    "errorCodes(map)": {
+      "USER_EXISTS": "User already exists",
+      "INVALID_CREDENTIALS": "Invalid email or password",
+      "REQUEST_ENTITY_TOO_LARGE": "The uploaded file is too large, please upload a smaller file!"
+    }
+  },
+  "@exception": {
+    "description": "Error messages"
+  },
+  "auth": {
+    "logoutConfirmation": "Are you sure you want to log out?",
+    "areYouSure": "Are you sure?",
+    "areYouSureToUpload": "Are you sure you want to upload the photo?",
+    "photoUploadSuccess": "Photo uploaded successfully!"
+  },
+  "@auth": {
+    "description": "Translations related to authentication"
+  },
+  "register": {
+    "title": "Welcome",
+    "subtitle": "Tempus varius a vitae interdum id\ntortor elementum tristique eleifend at.",
+    "buttons": {
+      "submit": "Register Now",
+      "gdpr(rich)": "I have read and agree to the ${gdpr(User Agreement)}. Please read this agreement before proceeding."
+    },
+    "gdpr": {
+      "title": "User Agreement",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tincidunt vel quam non porta. Sed eget arcu pellentesque, euismod lacus vel, vehicula magna. Ut leo tortor, auctor nec odio nec, vehicula porta lectus. Mauris quis tristique tellus. Aliquam nisi mi, semper sit amet ex at, elementum ultricies enim. Maecenas eleifend risus sapien, in ultricies lorem aliquam sed. Suspendisse non porta mi, eget rhoncus tellus. Morbi a ligula a ligula viverra tempor a vel dolor. Nullam egestas ultricies pretium. Aliquam sagittis massa leo, in hendrerit tortor consectetur ut. Aliquam iaculis ligula sit amet enim bibendum, ut pharetra sapien rutrum. Fusce sit amet lorem id nunc volutpat interdum eu eu tellus. Cras id orci turpis. Sed posuere arcu nec vestibulum lobortis.\n\nSed lacinia luctus venenatis. Donec bibendum congue condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sapien felis, fermentum sed tellus quis, tincidunt congue ipsum. Vestibulum nec purus non quam posuere varius vitae sed purus. Aenean et nulla nec sapien finibus imperdiet. Nam fermentum lobortis tellus. Etiam fermentum vulputate tellus eu sollicitudin."
+    },
+    "doYouHaveAccount(rich)": "Do you already have an account? ${login(Login)}!"
+  },
+  "@register": {
+    "description": "Translations related to registration"
+  },
+  "profile": {
+    "title": "Profile Details",
+    "limitedOffer": "Limited Offer",
+    "addPhoto": "Add Photo",
+    "favoriteMovies": "Favorite Movies",
+    "noFavoriteMovies": "No favorite movies yet",
+    "followFavoriteMovies": "Follow your favorite movies from here",
+    "settings": {
+      "title": "Settings",
+      "theme": "Theme",
+      "language": "Language",
+      "logout": "Logout",
+      "dark": "Dark",
+      "light": "Light",
+      "system": "System",
+      "turkish": "Türkçe",
+      "english": "English"
+    },
+    "addPhotoPage": {
+      "title": "Upload Your Photos",
+      "subtitle": "Resources out incentivize\nrelaxation floor loss cc.",
+      "continueButton": "Continue"
+    }
+  },
+  "@profile": {
+    "description": "Translations related to profile"
+  },
+  "limitedOfferModal": {
+    "title": "Limited Offer",
+    "subtitle": "Choose a token package to earn bonuses and unlock new episodes!",
+    "bonusSection": {
+      "title": "Bonuses You'll Get",
+      "premiumAccount": "Premium\nAccount",
+      "moreMatches": "More\nMatches",
+      "featured": "Featured\nProfile",
+      "moreLikes": "More\nLikes"
+    },
+    "packageSection": {
+      "title": "Choose a token package to unlock",
+      "token": "Token",
+      "weeklyPrice": "Per week"
+    },
+    "button": {
+      "viewAllTokens": "View All Tokens"
+    }
+  },
+  "@limitedOfferModal": {
+    "description": "Translations related to limited offer modal"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "509500834846",
+    "project_id": "hubx-dev-441e4",
+    "storage_bucket": "hubx-dev-441e4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509500834846:android:014e2ca06ec38aaa7e9a0f",
+        "android_client_info": {
+          "package_name": "com.hubx.app.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWH6_HT8xVwHK-7J3ic4AjZRE1FfPJ7tY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

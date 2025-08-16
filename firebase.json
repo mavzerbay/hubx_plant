@@ -1,0 +1,60 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "buildConfigurations": {
+          "src/development": {
+            "projectId": "hubx-dev-441e4",
+            "appId": "1:509500834846:android:014e2ca06ec38aaa7e9a0f",
+            "fileOutput": "android/app/src/development/google-services.json"
+          },
+          "src/production": {
+            "projectId": "hubx-prod-8fb83",
+            "appId": "1:268088026370:android:8d459dfbfc859a6ddf0e1b",
+            "fileOutput": "android/app/src/production/google-services.json"
+          }
+        }
+      },
+      "ios": {
+        "buildConfigurations": {
+          "Debug-development": {
+            "projectId": "hubx-dev-441e4",
+            "appId": "1:509500834846:ios:ba256121a2857b4e7e9a0f",
+            "uploadDebugSymbols": true,
+            "fileOutput": "ios/Runner/Firebase/development/GoogleService-Info.plist"
+          },
+          "Debug-production": {
+            "projectId": "hubx-prod-8fb83",
+            "appId": "1:268088026370:ios:4a50b82724526430df0e1b",
+            "uploadDebugSymbols": true,
+            "fileOutput": "ios/Runner/Firebase/production/GoogleService-Info.plist"
+          }
+        },
+        "targets": {
+          "Runner": {
+            "projectId": "hubx-prod-8fb83",
+            "appId": "1:268088026370:ios:4a50b82724526430df0e1b",
+            "uploadDebugSymbols": true,
+            "fileOutput": "ios/Runner/Firebase/production/GoogleService-Info.plist"
+          }
+        }
+      },
+      "dart": {
+        "lib/firebase_options_dev.dart": {
+          "projectId": "hubx-dev-441e4",
+          "configurations": {
+            "android": "1:509500834846:android:014e2ca06ec38aaa7e9a0f",
+            "ios": "1:509500834846:ios:ba256121a2857b4e7e9a0f"
+          }
+        },
+        "lib/firebase_options_prod.dart": {
+          "projectId": "hubx-prod-8fb83",
+          "configurations": {
+            "android": "1:268088026370:android:8d459dfbfc859a6ddf0e1b",
+            "ios": "1:268088026370:ios:4a50b82724526430df0e1b"
+          }
+        }
+      }
+    }
+  }
+}
