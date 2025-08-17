@@ -57,6 +57,23 @@ class AppColors {
 
   static const Color textFieldBorderColor = Color(0x3C3C4340);
 
+  static const Color fabBorderColor = Color(0x3DFFFFFF);
+  static const LinearGradient fabGradient = LinearGradient(
+    colors: [Color(0xFF28AF6E), Color(0xFF2CCC80)],
+    stops: [0.1667, 1.0],
+    transform: GradientRotation(153.43 * 3.1415926535 / 180),
+  );
+
+  static const LinearGradient paywallPriceGradient = LinearGradient(
+    begin: Alignment.centerRight,
+    end: Alignment.centerLeft,
+    stops: [0.0, 0.6851],
+    colors: [
+      Color(0x2B28AF6E),
+      Color(0x0028AF6E),
+    ],
+  );
+
   // Light theme
   static const AppColors light = AppColors(
     primaryColor: plantGreen,

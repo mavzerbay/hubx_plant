@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hubx/src/app/base/page_states/base_page.dart';
+import 'package:hubx/src/app/navigation/app_router.gr.dart';
 import 'package:hubx/src/app/pages/home/bloc/home_bloc.dart';
 import 'package:hubx/src/app/pages/home/components/home_feature_card.dart';
 import 'package:hubx/src/app/pages/home/components/home_greeting_section.dart';
@@ -39,7 +40,7 @@ class _HomePageState extends BasePageState<HomePage, HomeBloc> {
               // Premium Card
               HomePremiumCard(
                 onTap: () {
-                  // Navigate to premium upgrade screen
+                  navigator.push(const PaywallRoute());
                 },
               ),
 
