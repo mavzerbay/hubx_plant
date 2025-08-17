@@ -11,6 +11,7 @@ import 'package:hubx/src/app/base/cache/cache_manager.dart';
 import 'package:hubx/src/app/navigation/app_router.gr.dart';
 
 import 'package:hubx/src/domain/usecase/get_initial_app_data_usecase.dart';
+import 'package:intl/intl.dart';
 
 part 'app_event.dart';
 part 'app_state.dart';
@@ -111,6 +112,7 @@ class AppBloc extends BaseBloc<AppEvent, AppState> {
           orElse: () => AppLocale.tr,
         );
         await LocaleSettings.setLocale(appLocale);
+        Intl.defaultLocale = appLocale.languageCode;
         emit(
           state.copyWith(
             locale: appLocale,

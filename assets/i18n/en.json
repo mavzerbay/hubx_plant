@@ -9,6 +9,8 @@
   },
   "bottomNavigation": {
     "home": "Home",
+    "diagnose": "Diagnose",
+    "myGarden": "My Garden",
     "profile": "Profile"
   },
   "global": {
@@ -149,5 +151,71 @@
   },
   "@onboarding": {
     "description": "Onboarding screen translations"
+  },
+  "home": {
+    "greeting": {
+      "hiPlantLover": "Hi, plant lover!",
+      "goodMorning": "Good Morning! ⛅",
+      "goodAfternoon": "Good Afternoon! ⛅",
+      "goodEvening": "Good Evening! 🌙"
+    },
+    "searchPlaceholder": "Search for plants",
+    "premium": {
+      "title": "FREE Premium Available",
+      "subtitle": "Tap to upgrade your account!"
+    },
+    "scanPlant": "Scan Plant",
+    "featured": "Featured",
+    "categories": {
+      "ediblePlants": "Edible Plants",
+      "ferns": "Ferns",
+      "cactiAndSucculents": "Cacti and Succulents",
+      "palms": "Palms"
+    },
+    "features": {
+      "identifyPlants": "How to identify plants easily\nwith PlantApp?",
+      "speciesDifference": "Species and subspecies:\nthe difference"
+    }
+  },
+  "@home": {
+    "description": "Home screen translations"
+  },
+  "@@types": {
+    "price": "currency(symbol: '\\$')"
+  },
+  "paywall": {
+    "title(rich)": "${logo(PlantApp)} Premium",
+    "subtitle": "Access All Features",
+    "features": {
+      "unlimited": {
+        "title": "Unlimited",
+        "description": "Plant Identify"
+      },
+      "faster": {
+        "title": "Faster",
+        "description": "Process"
+      },
+      "exclusive": {
+        "title": "Exclusive",
+        "description": "Content"
+      }
+    },
+    "pricing": {
+      "monthly": {
+        "title": "1 Month",
+        "description": "${amount: price}/month, auto-renewal"
+      },
+      "yearly": {
+        "title": "1 Year",
+        "description": "First 3 days free, then ${amount: price}/year",
+        "discount": "Save 50%"
+      }
+    },
+    "bottomText": "After the 3-day free trial ends, you will be charged ${amount: price} for the annual subscription unless you cancel before the trial ends. Annual Subscription Auto-Renews.",
+    "terms": "Terms • Privacy • Restore",
+    "actions": {
+      "subscribe": "Subscribe",
+      "tryFree": "Try free for 3 days"
+    }
   }
 }

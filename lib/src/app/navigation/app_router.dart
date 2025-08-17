@@ -33,5 +33,11 @@ class AppRouter extends RootStackRouter {
         ),
       ],
     ),
+    CustomRoute<PaywallRoute>(
+      page: PaywallRoute.page,
+      transitionsBuilder: TransitionsBuilders.slideBottom,
+      duration: const Duration(milliseconds: 400),
+      fullscreenDialog: true,
+    ),
   ];
 }

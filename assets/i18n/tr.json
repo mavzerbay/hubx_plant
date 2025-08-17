@@ -9,6 +9,8 @@
   },
   "bottomNavigation": {
     "home": "Ana Sayfa",
+    "diagnose": "Tanı",
+    "myGarden": "Bahçem",
     "profile": "Profil"
   },
   "global": {
@@ -149,5 +151,74 @@
   },
   "@onboarding": {
     "description": "Onboarding ekranı çevirileri"
+  },
+  "home": {
+    "greeting": {
+      "hiPlantLover": "Merhaba bitki aşığı!",
+      "goodMorning": "Günaydın! ⛅",
+      "goodAfternoon": "İyi Günler! ⛅",
+      "goodEvening": "İyi Akşamlar! 🌙"
+    },
+    "searchPlaceholder": "Bitkileri arayın",
+    "premium": {
+      "title": "ÜCRETSİZ Premium Mevcut",
+      "subtitle": "Hesabınızı yükseltmek için dokunun!"
+    },
+    "scanPlant": "Bitki Tarayın",
+    "featured": "Öne Çıkanlar",
+    "categories": {
+      "ediblePlants": "Yenilebilir Bitkiler",
+      "ferns": "Eğreltiotları",
+      "cactiAndSucculents": "Kaktüs ve Sukulentler",
+      "palms": "Palmiyeler"
+    },
+    "features": {
+      "identifyPlants": "PlantApp ile bitkileri kolayca\nnasıl tanımlarsınız?",
+      "speciesDifference": "Tür ve alt türler:\nfark nedir?"
+    }
+  },
+  "@home": {
+    "description": "Ana sayfa çevirileri"
+  },
+  "@@types": {
+    "price": "currency(symbol: '\\$')"
+  },
+  "paywall": {
+    "title(rich)": "${logo(PlantApp)} Premium",
+    "subtitle": "Tüm özelliklere erişim",
+    "features": {
+      "unlimited": {
+        "title": "Sınırsız",
+        "description": "Bitki Tanımlama"
+      },
+      "faster": {
+        "title": "Daha Hızlı",
+        "description": "İşlem"
+      },
+      "exclusive": {
+        "title": "Özel",
+        "description": "İçerik"
+      }
+    },
+    "pricing": {
+      "monthly": {
+        "title": "1 Aylık",
+        "description": "${amount: price}/ay, otomatik yenileme"
+      },
+      "yearly": {
+        "title": "1 Yıllık",
+        "description": "İlk 3 gün ücretsiz, ardından ${amount: price}/yıl",
+        "discount": "%50 Tasarruf"
+      }
+    },
+    "bottomText": "3 günlük ücretsiz deneme süresi sona erdikten sonra, deneme süresi sona ermeden önce iptal etmediğiniz takdirde yıllık ${amount: price} ücretlendirileceksiniz. Yıllık Abonelik Otomatik Yenilemelidir.",
+    "terms": "Şartlar • Gizlilik • Geri Yükle",
+    "actions": {
+      "subscribe": "Abone Ol",
+      "tryFree": "3 Gün Ücretsiz Deneyin"
+    }
+  },
+  "@paywall": {
+    "description": "Ödeme duvarı çevirileri"
   }
 }

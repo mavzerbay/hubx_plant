@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hubx/src/app/resource/styles/app_text_styles.dart';
 import 'package:hubx/src/shared/extensions/theme_extensions.dart';
 
 class PrimaryButton extends StatelessWidget {
@@ -43,8 +44,7 @@ class PrimaryButton extends StatelessWidget {
                 text,
                 style:
                     textStyle ??
-                    context.textTheme.bodySmall?.copyWith(
-                      fontSize: 16.sp,
+                    AppTextStyles.bodyLarge().copyWith(
                       fontWeight: FontWeight.w600,
                       color: context.colorScheme.onPrimary,
                     ),

@@ -33,18 +33,46 @@ class AppColors {
   static late AppColors current;
 
   // PlantApp brand colors (Figma)
-  static const Color plantGreen = Color(0xFF4CAF50);
+  static const Color plantGreen = Color(0xFF28AF6E);
   static const Color plantDarkGreen = Color(0xFF388E3C);
   static const Color plantLightGreen = Color(0xFFC8E6C9);
   static const Color plantSecondaryGreen = Color(0xFF597165);
   static const Color plantWhite = Color(0xFFFFFFFF);
-  static const Color plantBackground = Color(0xFFF8F8F8);
-  static const Color plantCard = Color(0xFFF5F5F5);
+  static const Color plantBackground = Color(0xFFFBFAFA);
+  static const Color plantCard = Color(0xFFF4F6F6);
   static const Color plantGray = Color(0xFFBDBDBD);
   static const Color plantDarkGray = Color(0xFF616161);
   static const Color plantError = Color(0xFFD32F2F);
   static const Color plantWarning = Color(0xFFFFA000);
   static const Color plantInfo = Color(0xFF1976D2);
+
+  static const Color premiumBackground = Color(0xFF24201A);
+  static const Color premiumGold = Color(0xFFD9A846);
+  static const LinearGradient premiumGoldGradient1 = LinearGradient(
+    colors: [Color(0xFFE5C990), Color(0xFFE4B046)],
+  );
+  static const LinearGradient premiumGoldGradient2 = LinearGradient(
+    colors: [Color(0xFFFFDE9C), Color(0xFFF5C25B)],
+  );
+
+  static const Color textFieldBorderColor = Color(0x3C3C4340);
+
+  static const Color fabBorderColor = Color(0x3DFFFFFF);
+  static const LinearGradient fabGradient = LinearGradient(
+    colors: [Color(0xFF28AF6E), Color(0xFF2CCC80)],
+    stops: [0.1667, 1.0],
+    transform: GradientRotation(153.43 * 3.1415926535 / 180),
+  );
+
+  static const LinearGradient paywallPriceGradient = LinearGradient(
+    begin: Alignment.centerRight,
+    end: Alignment.centerLeft,
+    stops: [0.0, 0.6851],
+    colors: [
+      Color(0x2B28AF6E),
+      Color(0x0028AF6E),
+    ],
+  );
 
   // Light theme
   static const AppColors light = AppColors(

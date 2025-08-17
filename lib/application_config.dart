@@ -17,7 +17,6 @@ import 'package:hubx/src/app/di/locator.dart';
 import 'package:hubx/src/app/resource/constants/env_constants.dart';
 import 'package:hubx/src/shared/config.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:intl/intl.dart';
 
 class MyHttpOverrides extends HttpOverrides {
   @override
@@ -68,8 +67,6 @@ class AppConfig extends ApplicationConfig {
     locator<AppBloc>().add(const AppEvent.started());
 
     EnvConstants.init();
-
-    Intl.defaultLocale = 'en';
 
     Bloc.observer = AppBlocObserver();
 

@@ -20,6 +20,9 @@ class TranslationsEn extends Translations {
 		    overrides: overrides ?? {},
 		    cardinalResolver: cardinalResolver,
 		    ordinalResolver: ordinalResolver,
+		    types: {
+		      'price': ValueFormatter(() => NumberFormat.currency(symbol: '\$', locale: 'en')),
+		    },
 		  ),
 		  super(cardinalResolver: cardinalResolver, ordinalResolver: ordinalResolver) {
 		super.$meta.setFlatMapFunction($meta.getTranslation); // copy base translations to super.$meta
@@ -63,6 +66,11 @@ class TranslationsEn extends Translations {
 
 	/// Onboarding screen translations
 	@override late final _TranslationsOnboardingEn onboarding = _TranslationsOnboardingEn._(_root);
+
+	/// Home screen translations
+	@override late final _TranslationsHomeEn home = _TranslationsHomeEn._(_root);
+
+	@override late final _TranslationsPaywallEn paywall = _TranslationsPaywallEn._(_root);
 }
 
 // Path: app
@@ -83,6 +91,8 @@ class _TranslationsBottomNavigationEn extends TranslationsBottomNavigationTr {
 
 	// Translations
 	@override String get home => 'Home';
+	@override String get diagnose => 'Diagnose';
+	@override String get myGarden => 'My Garden';
 	@override String get profile => 'Profile';
 }
 
@@ -260,6 +270,41 @@ class _TranslationsOnboardingEn extends TranslationsOnboardingTr {
 	]);
 }
 
+// Path: home
+class _TranslationsHomeEn extends TranslationsHomeTr {
+	_TranslationsHomeEn._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override late final _TranslationsHomeGreetingEn greeting = _TranslationsHomeGreetingEn._(_root);
+	@override String get searchPlaceholder => 'Search for plants';
+	@override late final _TranslationsHomePremiumEn premium = _TranslationsHomePremiumEn._(_root);
+	@override String get scanPlant => 'Scan Plant';
+	@override String get featured => 'Featured';
+	@override late final _TranslationsHomeCategoriesEn categories = _TranslationsHomeCategoriesEn._(_root);
+	@override late final _TranslationsHomeFeaturesEn features = _TranslationsHomeFeaturesEn._(_root);
+}
+
+// Path: paywall
+class _TranslationsPaywallEn extends TranslationsPaywallTr {
+	_TranslationsPaywallEn._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override TextSpan title({required InlineSpanBuilder logo}) => TextSpan(children: [
+		logo('PlantApp'),
+		const TextSpan(text: ' Premium'),
+	]);
+	@override String get subtitle => 'Access All Features';
+	@override late final _TranslationsPaywallFeaturesEn features = _TranslationsPaywallFeaturesEn._(_root);
+	@override late final _TranslationsPaywallPricingEn pricing = _TranslationsPaywallPricingEn._(_root);
+	@override String bottomText({required num amount}) => 'After the 3-day free trial ends, you will be charged ${_root.$meta.types['price']!.format(amount)} for the annual subscription unless you cancel before the trial ends. Annual Subscription Auto-Renews.';
+	@override String get terms => 'Terms • Privacy • Restore';
+	@override late final _TranslationsPaywallActionsEn actions = _TranslationsPaywallActionsEn._(_root);
+}
+
 // Path: app.theme
 class _TranslationsAppThemeEn extends TranslationsAppThemeTr {
 	_TranslationsAppThemeEn._(TranslationsEn root) : this._root = root, super.internal(root);
@@ -327,6 +372,144 @@ class _TranslationsOnboardingPage3En extends TranslationsOnboardingPage3Tr {
 	]);
 }
 
+// Path: home.greeting
+class _TranslationsHomeGreetingEn extends TranslationsHomeGreetingTr {
+	_TranslationsHomeGreetingEn._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get hiPlantLover => 'Hi, plant lover!';
+	@override String get goodMorning => 'Good Morning! ⛅';
+	@override String get goodAfternoon => 'Good Afternoon! ⛅';
+	@override String get goodEvening => 'Good Evening! 🌙';
+}
+
+// Path: home.premium
+class _TranslationsHomePremiumEn extends TranslationsHomePremiumTr {
+	_TranslationsHomePremiumEn._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'FREE Premium Available';
+	@override String get subtitle => 'Tap to upgrade your account!';
+}
+
+// Path: home.categories
+class _TranslationsHomeCategoriesEn extends TranslationsHomeCategoriesTr {
+	_TranslationsHomeCategoriesEn._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get ediblePlants => 'Edible Plants';
+	@override String get ferns => 'Ferns';
+	@override String get cactiAndSucculents => 'Cacti and Succulents';
+	@override String get palms => 'Palms';
+}
+
+// Path: home.features
+class _TranslationsHomeFeaturesEn extends TranslationsHomeFeaturesTr {
+	_TranslationsHomeFeaturesEn._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get identifyPlants => 'How to identify plants easily\nwith PlantApp?';
+	@override String get speciesDifference => 'Species and subspecies:\nthe difference';
+}
+
+// Path: paywall.features
+class _TranslationsPaywallFeaturesEn extends TranslationsPaywallFeaturesTr {
+	_TranslationsPaywallFeaturesEn._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override late final _TranslationsPaywallFeaturesUnlimitedEn unlimited = _TranslationsPaywallFeaturesUnlimitedEn._(_root);
+	@override late final _TranslationsPaywallFeaturesFasterEn faster = _TranslationsPaywallFeaturesFasterEn._(_root);
+	@override late final _TranslationsPaywallFeaturesExclusiveEn exclusive = _TranslationsPaywallFeaturesExclusiveEn._(_root);
+}
+
+// Path: paywall.pricing
+class _TranslationsPaywallPricingEn extends TranslationsPaywallPricingTr {
+	_TranslationsPaywallPricingEn._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override late final _TranslationsPaywallPricingMonthlyEn monthly = _TranslationsPaywallPricingMonthlyEn._(_root);
+	@override late final _TranslationsPaywallPricingYearlyEn yearly = _TranslationsPaywallPricingYearlyEn._(_root);
+}
+
+// Path: paywall.actions
+class _TranslationsPaywallActionsEn extends TranslationsPaywallActionsTr {
+	_TranslationsPaywallActionsEn._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get subscribe => 'Subscribe';
+	@override String get tryFree => 'Try free for 3 days';
+}
+
+// Path: paywall.features.unlimited
+class _TranslationsPaywallFeaturesUnlimitedEn extends TranslationsPaywallFeaturesUnlimitedTr {
+	_TranslationsPaywallFeaturesUnlimitedEn._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Unlimited';
+	@override String get description => 'Plant Identify';
+}
+
+// Path: paywall.features.faster
+class _TranslationsPaywallFeaturesFasterEn extends TranslationsPaywallFeaturesFasterTr {
+	_TranslationsPaywallFeaturesFasterEn._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Faster';
+	@override String get description => 'Process';
+}
+
+// Path: paywall.features.exclusive
+class _TranslationsPaywallFeaturesExclusiveEn extends TranslationsPaywallFeaturesExclusiveTr {
+	_TranslationsPaywallFeaturesExclusiveEn._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Exclusive';
+	@override String get description => 'Content';
+}
+
+// Path: paywall.pricing.monthly
+class _TranslationsPaywallPricingMonthlyEn extends TranslationsPaywallPricingMonthlyTr {
+	_TranslationsPaywallPricingMonthlyEn._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => '1 Month';
+	@override String description({required num amount}) => '${_root.$meta.types['price']!.format(amount)}/month, auto-renewal';
+}
+
+// Path: paywall.pricing.yearly
+class _TranslationsPaywallPricingYearlyEn extends TranslationsPaywallPricingYearlyTr {
+	_TranslationsPaywallPricingYearlyEn._(TranslationsEn root) : this._root = root, super.internal(root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => '1 Year';
+	@override String description({required num amount}) => 'First 3 days free, then ${_root.$meta.types['price']!.format(amount)}/year';
+	@override String get discount => 'Save 50%';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 extension on TranslationsEn {
@@ -337,6 +520,8 @@ extension on TranslationsEn {
 			case 'app.theme.light': return 'Light';
 			case 'app.theme.dark': return 'Dark';
 			case 'bottomNavigation.home': return 'Home';
+			case 'bottomNavigation.diagnose': return 'Diagnose';
+			case 'bottomNavigation.myGarden': return 'My Garden';
 			case 'bottomNavigation.profile': return 'Profile';
 			case 'global.ok': return 'OK';
 			case 'global.cancel': return 'Cancel';
@@ -449,6 +634,41 @@ extension on TranslationsEn {
 				const TextSpan(text: ' & '),
 				privacy('Privacy Policy'),
 			]);
+			case 'home.greeting.hiPlantLover': return 'Hi, plant lover!';
+			case 'home.greeting.goodMorning': return 'Good Morning! ⛅';
+			case 'home.greeting.goodAfternoon': return 'Good Afternoon! ⛅';
+			case 'home.greeting.goodEvening': return 'Good Evening! 🌙';
+			case 'home.searchPlaceholder': return 'Search for plants';
+			case 'home.premium.title': return 'FREE Premium Available';
+			case 'home.premium.subtitle': return 'Tap to upgrade your account!';
+			case 'home.scanPlant': return 'Scan Plant';
+			case 'home.featured': return 'Featured';
+			case 'home.categories.ediblePlants': return 'Edible Plants';
+			case 'home.categories.ferns': return 'Ferns';
+			case 'home.categories.cactiAndSucculents': return 'Cacti and Succulents';
+			case 'home.categories.palms': return 'Palms';
+			case 'home.features.identifyPlants': return 'How to identify plants easily\nwith PlantApp?';
+			case 'home.features.speciesDifference': return 'Species and subspecies:\nthe difference';
+			case 'paywall.title': return ({required InlineSpanBuilder logo}) => TextSpan(children: [
+				logo('PlantApp'),
+				const TextSpan(text: ' Premium'),
+			]);
+			case 'paywall.subtitle': return 'Access All Features';
+			case 'paywall.features.unlimited.title': return 'Unlimited';
+			case 'paywall.features.unlimited.description': return 'Plant Identify';
+			case 'paywall.features.faster.title': return 'Faster';
+			case 'paywall.features.faster.description': return 'Process';
+			case 'paywall.features.exclusive.title': return 'Exclusive';
+			case 'paywall.features.exclusive.description': return 'Content';
+			case 'paywall.pricing.monthly.title': return '1 Month';
+			case 'paywall.pricing.monthly.description': return ({required num amount}) => '${_root.$meta.types['price']!.format(amount)}/month, auto-renewal';
+			case 'paywall.pricing.yearly.title': return '1 Year';
+			case 'paywall.pricing.yearly.description': return ({required num amount}) => 'First 3 days free, then ${_root.$meta.types['price']!.format(amount)}/year';
+			case 'paywall.pricing.yearly.discount': return 'Save 50%';
+			case 'paywall.bottomText': return ({required num amount}) => 'After the 3-day free trial ends, you will be charged ${_root.$meta.types['price']!.format(amount)} for the annual subscription unless you cancel before the trial ends. Annual Subscription Auto-Renews.';
+			case 'paywall.terms': return 'Terms • Privacy • Restore';
+			case 'paywall.actions.subscribe': return 'Subscribe';
+			case 'paywall.actions.tryFree': return 'Try free for 3 days';
 			default: return null;
 		}
 	}

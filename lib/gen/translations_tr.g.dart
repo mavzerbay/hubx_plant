@@ -24,6 +24,9 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 		    overrides: overrides ?? {},
 		    cardinalResolver: cardinalResolver,
 		    ordinalResolver: ordinalResolver,
+		    types: {
+		      'price': ValueFormatter(() => NumberFormat.currency(symbol: '\$', locale: 'tr')),
+		    },
 		  ) {
 		$meta.setFlatMapFunction(_flatMapFunction);
 	}
@@ -64,6 +67,12 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 
 	/// Onboarding ekranı çevirileri
 	late final TranslationsOnboardingTr onboarding = TranslationsOnboardingTr.internal(_root);
+
+	/// Ana sayfa çevirileri
+	late final TranslationsHomeTr home = TranslationsHomeTr.internal(_root);
+
+	/// Ödeme duvarı çevirileri
+	late final TranslationsPaywallTr paywall = TranslationsPaywallTr.internal(_root);
 }
 
 // Path: app
@@ -86,6 +95,12 @@ class TranslationsBottomNavigationTr {
 
 	/// tr: 'Ana Sayfa'
 	String get home => 'Ana Sayfa';
+
+	/// tr: 'Tanı'
+	String get diagnose => 'Tanı';
+
+	/// tr: 'Bahçem'
+	String get myGarden => 'Bahçem';
 
 	/// tr: 'Profil'
 	String get profile => 'Profil';
@@ -423,6 +438,59 @@ class TranslationsOnboardingTr {
 	]);
 }
 
+// Path: home
+class TranslationsHomeTr {
+	TranslationsHomeTr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final TranslationsHomeGreetingTr greeting = TranslationsHomeGreetingTr.internal(_root);
+
+	/// tr: 'Bitkileri arayın'
+	String get searchPlaceholder => 'Bitkileri arayın';
+
+	late final TranslationsHomePremiumTr premium = TranslationsHomePremiumTr.internal(_root);
+
+	/// tr: 'Bitki Tarayın'
+	String get scanPlant => 'Bitki Tarayın';
+
+	/// tr: 'Öne Çıkanlar'
+	String get featured => 'Öne Çıkanlar';
+
+	late final TranslationsHomeCategoriesTr categories = TranslationsHomeCategoriesTr.internal(_root);
+	late final TranslationsHomeFeaturesTr features = TranslationsHomeFeaturesTr.internal(_root);
+}
+
+// Path: paywall
+class TranslationsPaywallTr {
+	TranslationsPaywallTr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// tr: '${logo(PlantApp)} Premium'
+	TextSpan title({required InlineSpanBuilder logo}) => TextSpan(children: [
+		logo('PlantApp'),
+		const TextSpan(text: ' Premium'),
+	]);
+
+	/// tr: 'Tüm özelliklere erişim'
+	String get subtitle => 'Tüm özelliklere erişim';
+
+	late final TranslationsPaywallFeaturesTr features = TranslationsPaywallFeaturesTr.internal(_root);
+	late final TranslationsPaywallPricingTr pricing = TranslationsPaywallPricingTr.internal(_root);
+
+	/// tr: '3 günlük ücretsiz deneme süresi sona erdikten sonra, deneme süresi sona ermeden önce iptal etmediğiniz takdirde yıllık ${amount: price} ücretlendirileceksiniz. Yıllık Abonelik Otomatik Yenilemelidir.'
+	String bottomText({required num amount}) => '3 günlük ücretsiz deneme süresi sona erdikten sonra, deneme süresi sona ermeden önce iptal etmediğiniz takdirde yıllık ${_root.$meta.types['price']!.format(amount)} ücretlendirileceksiniz. Yıllık Abonelik Otomatik Yenilemelidir.';
+
+	/// tr: 'Şartlar • Gizlilik • Geri Yükle'
+	String get terms => 'Şartlar • Gizlilik • Geri Yükle';
+
+	late final TranslationsPaywallActionsTr actions = TranslationsPaywallActionsTr.internal(_root);
+}
+
 // Path: app.theme
 class TranslationsAppThemeTr {
 	TranslationsAppThemeTr.internal(this._root);
@@ -515,6 +583,194 @@ class TranslationsOnboardingPage3Tr {
 	]);
 }
 
+// Path: home.greeting
+class TranslationsHomeGreetingTr {
+	TranslationsHomeGreetingTr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// tr: 'Merhaba bitki aşığı!'
+	String get hiPlantLover => 'Merhaba bitki aşığı!';
+
+	/// tr: 'Günaydın! ⛅'
+	String get goodMorning => 'Günaydın! ⛅';
+
+	/// tr: 'İyi Günler! ⛅'
+	String get goodAfternoon => 'İyi Günler! ⛅';
+
+	/// tr: 'İyi Akşamlar! 🌙'
+	String get goodEvening => 'İyi Akşamlar! 🌙';
+}
+
+// Path: home.premium
+class TranslationsHomePremiumTr {
+	TranslationsHomePremiumTr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// tr: 'ÜCRETSİZ Premium Mevcut'
+	String get title => 'ÜCRETSİZ Premium Mevcut';
+
+	/// tr: 'Hesabınızı yükseltmek için dokunun!'
+	String get subtitle => 'Hesabınızı yükseltmek için dokunun!';
+}
+
+// Path: home.categories
+class TranslationsHomeCategoriesTr {
+	TranslationsHomeCategoriesTr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// tr: 'Yenilebilir Bitkiler'
+	String get ediblePlants => 'Yenilebilir Bitkiler';
+
+	/// tr: 'Eğreltiotları'
+	String get ferns => 'Eğreltiotları';
+
+	/// tr: 'Kaktüs ve Sukulentler'
+	String get cactiAndSucculents => 'Kaktüs ve Sukulentler';
+
+	/// tr: 'Palmiyeler'
+	String get palms => 'Palmiyeler';
+}
+
+// Path: home.features
+class TranslationsHomeFeaturesTr {
+	TranslationsHomeFeaturesTr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// tr: 'PlantApp ile bitkileri kolayca nasıl tanımlarsınız?'
+	String get identifyPlants => 'PlantApp ile bitkileri kolayca\nnasıl tanımlarsınız?';
+
+	/// tr: 'Tür ve alt türler: fark nedir?'
+	String get speciesDifference => 'Tür ve alt türler:\nfark nedir?';
+}
+
+// Path: paywall.features
+class TranslationsPaywallFeaturesTr {
+	TranslationsPaywallFeaturesTr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final TranslationsPaywallFeaturesUnlimitedTr unlimited = TranslationsPaywallFeaturesUnlimitedTr.internal(_root);
+	late final TranslationsPaywallFeaturesFasterTr faster = TranslationsPaywallFeaturesFasterTr.internal(_root);
+	late final TranslationsPaywallFeaturesExclusiveTr exclusive = TranslationsPaywallFeaturesExclusiveTr.internal(_root);
+}
+
+// Path: paywall.pricing
+class TranslationsPaywallPricingTr {
+	TranslationsPaywallPricingTr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final TranslationsPaywallPricingMonthlyTr monthly = TranslationsPaywallPricingMonthlyTr.internal(_root);
+	late final TranslationsPaywallPricingYearlyTr yearly = TranslationsPaywallPricingYearlyTr.internal(_root);
+}
+
+// Path: paywall.actions
+class TranslationsPaywallActionsTr {
+	TranslationsPaywallActionsTr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// tr: 'Abone Ol'
+	String get subscribe => 'Abone Ol';
+
+	/// tr: '3 Gün Ücretsiz Deneyin'
+	String get tryFree => '3 Gün Ücretsiz Deneyin';
+}
+
+// Path: paywall.features.unlimited
+class TranslationsPaywallFeaturesUnlimitedTr {
+	TranslationsPaywallFeaturesUnlimitedTr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// tr: 'Sınırsız'
+	String get title => 'Sınırsız';
+
+	/// tr: 'Bitki Tanımlama'
+	String get description => 'Bitki Tanımlama';
+}
+
+// Path: paywall.features.faster
+class TranslationsPaywallFeaturesFasterTr {
+	TranslationsPaywallFeaturesFasterTr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// tr: 'Daha Hızlı'
+	String get title => 'Daha Hızlı';
+
+	/// tr: 'İşlem'
+	String get description => 'İşlem';
+}
+
+// Path: paywall.features.exclusive
+class TranslationsPaywallFeaturesExclusiveTr {
+	TranslationsPaywallFeaturesExclusiveTr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// tr: 'Özel'
+	String get title => 'Özel';
+
+	/// tr: 'İçerik'
+	String get description => 'İçerik';
+}
+
+// Path: paywall.pricing.monthly
+class TranslationsPaywallPricingMonthlyTr {
+	TranslationsPaywallPricingMonthlyTr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// tr: '1 Aylık'
+	String get title => '1 Aylık';
+
+	/// tr: '${amount: price}/ay, otomatik yenileme'
+	String description({required num amount}) => '${_root.$meta.types['price']!.format(amount)}/ay, otomatik yenileme';
+}
+
+// Path: paywall.pricing.yearly
+class TranslationsPaywallPricingYearlyTr {
+	TranslationsPaywallPricingYearlyTr.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// tr: '1 Yıllık'
+	String get title => '1 Yıllık';
+
+	/// tr: 'İlk 3 gün ücretsiz, ardından ${amount: price}/yıl'
+	String description({required num amount}) => 'İlk 3 gün ücretsiz, ardından ${_root.$meta.types['price']!.format(amount)}/yıl';
+
+	/// tr: '%50 Tasarruf'
+	String get discount => '%50 Tasarruf';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 extension on Translations {
@@ -525,6 +781,8 @@ extension on Translations {
 			case 'app.theme.light': return 'Aydınlık';
 			case 'app.theme.dark': return 'Koyu';
 			case 'bottomNavigation.home': return 'Ana Sayfa';
+			case 'bottomNavigation.diagnose': return 'Tanı';
+			case 'bottomNavigation.myGarden': return 'Bahçem';
 			case 'bottomNavigation.profile': return 'Profil';
 			case 'global.ok': return 'Tamam';
 			case 'global.cancel': return 'İptal';
@@ -639,6 +897,41 @@ extension on Translations {
 				privacy('Gizlilik Politikasını'),
 				const TextSpan(text: ' kabul etmiş olursunuz'),
 			]);
+			case 'home.greeting.hiPlantLover': return 'Merhaba bitki aşığı!';
+			case 'home.greeting.goodMorning': return 'Günaydın! ⛅';
+			case 'home.greeting.goodAfternoon': return 'İyi Günler! ⛅';
+			case 'home.greeting.goodEvening': return 'İyi Akşamlar! 🌙';
+			case 'home.searchPlaceholder': return 'Bitkileri arayın';
+			case 'home.premium.title': return 'ÜCRETSİZ Premium Mevcut';
+			case 'home.premium.subtitle': return 'Hesabınızı yükseltmek için dokunun!';
+			case 'home.scanPlant': return 'Bitki Tarayın';
+			case 'home.featured': return 'Öne Çıkanlar';
+			case 'home.categories.ediblePlants': return 'Yenilebilir Bitkiler';
+			case 'home.categories.ferns': return 'Eğreltiotları';
+			case 'home.categories.cactiAndSucculents': return 'Kaktüs ve Sukulentler';
+			case 'home.categories.palms': return 'Palmiyeler';
+			case 'home.features.identifyPlants': return 'PlantApp ile bitkileri kolayca\nnasıl tanımlarsınız?';
+			case 'home.features.speciesDifference': return 'Tür ve alt türler:\nfark nedir?';
+			case 'paywall.title': return ({required InlineSpanBuilder logo}) => TextSpan(children: [
+				logo('PlantApp'),
+				const TextSpan(text: ' Premium'),
+			]);
+			case 'paywall.subtitle': return 'Tüm özelliklere erişim';
+			case 'paywall.features.unlimited.title': return 'Sınırsız';
+			case 'paywall.features.unlimited.description': return 'Bitki Tanımlama';
+			case 'paywall.features.faster.title': return 'Daha Hızlı';
+			case 'paywall.features.faster.description': return 'İşlem';
+			case 'paywall.features.exclusive.title': return 'Özel';
+			case 'paywall.features.exclusive.description': return 'İçerik';
+			case 'paywall.pricing.monthly.title': return '1 Aylık';
+			case 'paywall.pricing.monthly.description': return ({required num amount}) => '${_root.$meta.types['price']!.format(amount)}/ay, otomatik yenileme';
+			case 'paywall.pricing.yearly.title': return '1 Yıllık';
+			case 'paywall.pricing.yearly.description': return ({required num amount}) => 'İlk 3 gün ücretsiz, ardından ${_root.$meta.types['price']!.format(amount)}/yıl';
+			case 'paywall.pricing.yearly.discount': return '%50 Tasarruf';
+			case 'paywall.bottomText': return ({required num amount}) => '3 günlük ücretsiz deneme süresi sona erdikten sonra, deneme süresi sona ermeden önce iptal etmediğiniz takdirde yıllık ${_root.$meta.types['price']!.format(amount)} ücretlendirileceksiniz. Yıllık Abonelik Otomatik Yenilemelidir.';
+			case 'paywall.terms': return 'Şartlar • Gizlilik • Geri Yükle';
+			case 'paywall.actions.subscribe': return 'Abone Ol';
+			case 'paywall.actions.tryFree': return '3 Gün Ücretsiz Deneyin';
 			default: return null;
 		}
 	}
