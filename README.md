@@ -365,34 +365,6 @@ assets/i18n/
 └── tr.json    # Turkish translations
 ```
 
-## 🧪 Testing
-
-### Test Structure
-```
-test/
-├── unit/          # Unit tests
-├── widget/        # Widget tests
-└── integration/   # Integration tests
-```
-
-### Testing Tools
-- **flutter_test**: Widget and unit testing
-- **bloc_test**: BLoC testing utilities  
-- **mocktail**: Mocking framework
-
-### Example Test
-```dart
-blocTest<HomeBloc, HomeState>(
-  'emits categories when GetCategories is added',
-  build: () => HomeBloc(),
-  act: (bloc) => bloc.add(const HomeEvent.getCategories()),
-  expect: () => [
-    const HomeState(isLoading: true),
-    HomeState(categories: mockCategories, isLoading: false),
-  ],
-);
-```
-
 ## 📊 Code Quality
 
 ### Static Analysis
@@ -468,7 +440,6 @@ Container(
 
 ### Data Protection
 - **Encrypted SharedPreferences**: Sensitive data storage
-- **Certificate Pinning**: API security
 - **Obfuscation**: Code protection in release builds
 
 ### Privacy
