@@ -6,7 +6,7 @@ import 'package:hubx/src/app/navigation/app_navigator_impl.dart';
 import 'package:hubx/src/app/navigation/app_router.dart' as ar;
 import 'package:hubx/src/app/resource/dimens/app_dimen.dart';
 import 'package:hubx/src/app/resource/styles/app_colors.dart';
-import 'package:hubx/src/domain/domain/app_navigator.dart';
+import 'package:hubx/src/domain/navigation/app_navigator.dart';
 import 'package:hubx/src/shared/extensions/context_extension.dart';
 import 'package:provider/provider.dart';
 

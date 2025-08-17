@@ -8,7 +8,7 @@ import 'package:hubx/src/app/base/cache/cache_manager.dart';
 import 'package:hubx/src/app/bloc/app_bloc.dart';
 import 'package:hubx/src/app/navigation/app_navigator_impl.dart';
 import 'package:hubx/src/app/network/exceptions/token_exception.dart';
-import 'package:hubx/src/domain/domain/app_navigator.dart';
+import 'package:hubx/src/domain/navigation/app_navigator.dart';
 import 'package:hubx/src/shared/mixin/log_mixin.dart';
 
 abstract class BaseCubit<E extends BaseBlocState> extends BaseCubitDelegate<E> {

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' as m;
 import 'package:hubx/src/app/components/snackbars.dart';
 import 'package:hubx/src/app/navigation/app_router.dart';
-import 'package:hubx/src/domain/domain/app_navigator.dart';
+import 'package:hubx/src/domain/navigation/app_navigator.dart';
 import 'package:hubx/src/shared/mixin/log_mixin.dart';
 
 class AppNavigatorImpl extends AppNavigator with LogMixin {
