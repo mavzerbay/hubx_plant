@@ -13,6 +13,7 @@ class HomeGreetingSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppColors.of(context);
     return Container(
       height: 0.23.sh,
       decoration: BoxDecoration(
@@ -38,8 +39,8 @@ class HomeGreetingSection extends StatelessWidget {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    Colors.white.withValues(alpha: 0.15),
-                    Colors.white.withValues(alpha: 0.05),
+                    AppColors.plantWhite.withValues(alpha: 0.15),
+                    AppColors.plantWhite.withValues(alpha: 0.05),
                   ],
                 ),
               ),
