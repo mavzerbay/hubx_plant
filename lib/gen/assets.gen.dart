@@ -24,6 +24,44 @@ class $AssetsI18nGen {
   List<String> get values => [en, tr];
 }
 
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/garden-icon.png
+  AssetGenImage get gardenIcon =>
+      const AssetGenImage('assets/icons/garden-icon.png');
+
+  /// File path: assets/icons/healthcare-icon.png
+  AssetGenImage get healthcareIcon =>
+      const AssetGenImage('assets/icons/healthcare-icon.png');
+
+  /// File path: assets/icons/home-icon.png
+  AssetGenImage get homeIcon =>
+      const AssetGenImage('assets/icons/home-icon.png');
+
+  /// File path: assets/icons/identify-icon.png
+  AssetGenImage get identifyIcon =>
+      const AssetGenImage('assets/icons/identify-icon.png');
+
+  /// File path: assets/icons/profile-icon.png
+  AssetGenImage get profileIcon =>
+      const AssetGenImage('assets/icons/profile-icon.png');
+
+  /// File path: assets/icons/speedometer.png
+  AssetGenImage get speedometer =>
+      const AssetGenImage('assets/icons/speedometer.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+    gardenIcon,
+    healthcareIcon,
+    homeIcon,
+    identifyIcon,
+    profileIcon,
+    speedometer,
+  ];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -37,6 +75,10 @@ class $AssetsImagesGen {
   $AssetsImagesOnboardingGen get onboarding =>
       const $AssetsImagesOnboardingGen();
 
+  /// File path: assets/images/premium_background.png
+  AssetGenImage get premiumBackground =>
+      const AssetGenImage('assets/images/premium_background.png');
+
   /// File path: assets/images/search_background.png
   AssetGenImage get searchBackground =>
       const AssetGenImage('assets/images/search_background.png');
@@ -45,7 +87,13 @@ class $AssetsImagesGen {
   AssetGenImage get splash => const AssetGenImage('assets/images/splash.jpg');
 
   /// List of all assets
-  List<AssetGenImage> get values => [logo, mail, searchBackground, splash];
+  List<AssetGenImage> get values => [
+    logo,
+    mail,
+    premiumBackground,
+    searchBackground,
+    splash,
+  ];
 }
 
 class $AssetsImagesOnboardingGen {
@@ -156,6 +204,7 @@ class Assets {
   const Assets._();
 
   static const $AssetsI18nGen i18n = $AssetsI18nGen();
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
