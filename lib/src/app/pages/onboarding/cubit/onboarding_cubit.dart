@@ -17,7 +17,7 @@ class OnboardingCubit extends BaseCubit<OnboardingState> {
   void setCurrentPage(int index) {
     if (index < 0) return;
     if (index >= _onboardingPageCount) {
-      navigator.replaceAll([const DashboardRoute()]);
+      navigator.replaceAll([const DashboardRoute(), const PaywallRoute()]);
       return;
     }
 
