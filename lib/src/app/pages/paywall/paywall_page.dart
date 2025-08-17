@@ -19,7 +19,7 @@ class PaywallPage extends StatefulWidget {
 }
 
 class _PaywallPageState extends State<PaywallPage> {
-  final ValueNotifier<int> selectedFeatureIndex = ValueNotifier<int>(0);
+  final ValueNotifier<int> selectedFeatureIndex = ValueNotifier<int>(1);
 
   @override
   Widget build(BuildContext context) {
