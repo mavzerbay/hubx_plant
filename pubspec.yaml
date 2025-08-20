@@ -50,7 +50,7 @@ dev_dependencies:
   freezed: ^3.1.0
   json_serializable: ^6.9.5
   mocktail: ^1.0.4
-  retrofit_generator: ^9.7.0
+  retrofit_generator: ^10.0.2
   slang_build_runner: ^4.8.0
   very_good_analysis: ^9.0.0
 
